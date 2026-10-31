@@ -1,0 +1,6 @@
+{
+  "name": "KYORP — Key to Original Purity",
+  "description": "Premium Indian science-backed health, wellness, beauty, and personal care ecosystem integrating Ayurveda, biotechnology, dermatology, cosmetic science, oral science, nutrition, and digital health.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

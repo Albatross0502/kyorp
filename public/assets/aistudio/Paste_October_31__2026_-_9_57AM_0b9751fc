@@ -1,0 +1,3634 @@
+i want it to look like this and home tab also in the hedar <!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KYORP — Key to Original Purity | Science-Backed Health, Wellness & Beauty</title>
+  <meta name="description" content="Premium Indian science-backed health, wellness, beauty, and personal care ecosystem integrating Ayurveda, biotechnology, dermatology, cosmetic science, oral science, nutrition, and digital health." />
+  <meta property="og:title" content="KYORP — Key to Original Purity" />
+  <meta property="og:description" content="Ayurveda × Modern Science × Clinical Validation × Original Purity. 15 specialised divisions, 429 master formulations." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Google Fonts: Cormorant Garamond, Jost, Tiro Devanagari Hindi, Noto Sans Devanagari -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&family=Noto+Sans+Devanagari:wght@300;400;500;600&family=Tiro+Devanagari+Hindi:ital@0;1&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       KYORP DESIGN TOKENS & RESET
+       ========================================================================== */
+    :root {
+      --ivory: #F6F1E7;
+      --parchment: #EDE5D4;
+      --ink: #12100E;
+      --forest: #1B2A22;
+      --saffron: #B98A3E;
+      --saffron-soft: #D9BC86;
+      --stone: #6E675C;
+      --line: rgba(18, 16, 14, 0.14);
+      --line-light: rgba(246, 241, 231, 0.18);
+      --font-serif: "Cormorant Garamond", Georgia, serif;
+      --font-sans: "Jost", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-hindi-serif: "Tiro Devanagari Hindi", serif;
+      --font-hindi-sans: "Noto Sans Devanagari", sans-serif;
+      --ease: cubic-bezier(0.2, 0.7, 0.1, 1);
+      --radius: 2px;
+      --header-h: 74px;
+    }
+
+    html.lang-hi {
+      --font-serif: "Tiro Devanagari Hindi", serif;
+      --font-sans: "Noto Sans Devanagari", sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--ivory);
+      color: var(--ink);
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.7;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      background-color: var(--ivory);
+      color: var(--ink);
+      overflow-x: hidden;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    ::selection {
+      background-color: var(--saffron);
+      color: var(--ivory);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.3s var(--ease), opacity 0.3s var(--ease);
+    }
+
+    button, input, select, textarea {
+      font: inherit;
+      color: inherit;
+      border: none;
+      background: none;
+      outline: none;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+      outline: 2px solid var(--saffron);
+      outline-offset: 2px;
+    }
+
+    img, svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    @media (min-width: 768px) {
+      .container { padding: 0 40px; }
+    }
+    @media (min-width: 1200px) {
+      .container { padding: 0 56px; }
+    }
+
+    /* TYPOGRAPHY */
+    .serif { font-family: var(--font-serif); font-weight: 400; }
+    .label-caps {
+      font-size: 11px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--saffron);
+    }
+    .text-stone { color: var(--stone); }
+    .text-ivory { color: var(--ivory); }
+    .text-saffron { color: var(--saffron); }
+
+    /* BUTTONS */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 14px 28px;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      border-radius: var(--radius);
+      transition: all 0.4s var(--ease);
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-primary {
+      background-color: var(--ink);
+      color: var(--ivory);
+      border: 1px solid var(--ink);
+    }
+    .btn-primary:hover {
+      background-color: var(--saffron);
+      border-color: var(--saffron);
+      color: var(--ivory);
+    }
+    .btn-outline {
+      border: 1px solid var(--ink);
+      color: var(--ink);
+    }
+    .btn-outline:hover {
+      background-color: var(--ink);
+      color: var(--ivory);
+    }
+    .btn-outline-light {
+      border: 1px solid rgba(246, 241, 231, 0.4);
+      color: var(--ivory);
+    }
+    .btn-outline-light:hover {
+      background-color: var(--ivory);
+      color: var(--ink);
+      border-color: var(--ivory);
+    }
+    .btn-gold {
+      background-color: var(--saffron);
+      color: var(--ivory);
+      border: 1px solid var(--saffron);
+    }
+    .btn-gold:hover {
+      background-color: #9f7530;
+      border-color: #9f7530;
+    }
+
+    /* BADGES & CHIPS */
+    .badge-dev {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: rgba(185, 138, 62, 0.12);
+      color: #916827;
+      border: 1px solid rgba(185, 138, 62, 0.3);
+      border-radius: var(--radius);
+    }
+    .badge-live {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: rgba(27, 42, 34, 0.08);
+      color: var(--forest);
+      border: 1px solid rgba(27, 42, 34, 0.2);
+      border-radius: var(--radius);
+    }
+
+    /* ANNOUNCEMENT BAR */
+    #announcement-bar {
+      background-color: var(--forest);
+      color: var(--ivory);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 9px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      border-bottom: 1px solid var(--line-light);
+      z-index: 60;
+    }
+    #announcement-bar span {
+      text-align: center;
+    }
+    #announcement-dismiss {
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 0.6;
+      font-size: 14px;
+      line-height: 1;
+      padding: 4px;
+    }
+    #announcement-dismiss:hover { opacity: 1; }
+
+    /* HEADER */
+    #site-header {
+      position: sticky;
+      top: 0;
+      background-color: var(--ivory);
+      border-bottom: 1px solid var(--line);
+      z-index: 50;
+      transition: transform 0.4s var(--ease), background-color 0.4s var(--ease);
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: var(--header-h);
+    }
+    .header-left, .header-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .nav-link {
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 500;
+      position: relative;
+      padding: 6px 0;
+    }
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 1px;
+      background-color: var(--saffron);
+      transition: width 0.3s var(--ease);
+    }
+    .nav-link:hover::after, .nav-link.active::after {
+      width: 100%;
+    }
+
+    /* LOGO */
+    .brand-logo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .brand-logo .logo-word {
+      font-family: var(--font-serif);
+      font-size: 26px;
+      letter-spacing: 0.32em;
+      font-weight: 500;
+      line-height: 1;
+      color: var(--ink);
+    }
+    .brand-logo .logo-tag {
+      font-size: 9px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--saffron);
+      margin-top: 4px;
+    }
+
+    /* HEADER CONTROLS */
+    .icon-btn {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius);
+      transition: background-color 0.2s, color 0.2s;
+      position: relative;
+      color: var(--ink);
+    }
+    .icon-btn:hover {
+      background-color: rgba(18, 16, 14, 0.05);
+    }
+    .icon-btn.active {
+      color: #b03030;
+    }
+    .badge-count {
+      position: absolute;
+      top: 5px;
+      right: 3px;
+      background-color: var(--saffron);
+      color: var(--ivory);
+      font-size: 9px;
+      font-weight: 600;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .scroll-progress {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 2px;
+      background-color: var(--saffron);
+      width: 0%;
+      transition: width 0.1s;
+    }
+
+    /* DESKTOP MEGA MENU — FIXED FULL-WIDTH LAYOUT */
+    .has-dropdown {
+      position: static;
+      height: var(--header-h);
+      display: flex;
+      align-items: center;
+    }
+    .mega-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      width: 100%;
+      background-color: var(--ivory);
+      border-top: 1px solid var(--line);
+      border-bottom: 2px solid var(--saffron);
+      padding: 40px 0;
+      display: none;
+      opacity: 0;
+      z-index: 90;
+      box-shadow: 0 24px 48px rgba(18, 16, 14, 0.12);
+      max-height: calc(100vh - var(--header-h) - 20px);
+      overflow-y: auto;
+    }
+    .has-dropdown:hover .mega-menu,
+    .has-dropdown:focus-within .mega-menu {
+      display: block;
+      opacity: 1;
+    }
+    .mega-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px 40px;
+    }
+    @media (max-width: 1100px) {
+      .mega-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    .mega-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding: 10px 12px;
+      border-radius: var(--radius);
+      transition: background-color 0.2s var(--ease);
+    }
+    .mega-item:hover {
+      background-color: var(--parchment);
+    }
+    .mega-item-title {
+      font-family: var(--font-serif);
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--ink);
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .mega-item-desc {
+      font-size: 12px;
+      color: var(--stone);
+      line-height: 1.45;
+    }
+    .mega-item:hover .mega-item-title {
+      color: var(--saffron);
+    }
+
+    /* MOBILE MENU OVERLAY */
+    #mobile-menu {
+      position: fixed;
+      inset: 0;
+      background: var(--ivory);
+      z-index: 100;
+      padding: 32px 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.35s var(--ease);
+      overflow-y: auto;
+    }
+    #mobile-menu.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .mobile-nav-links {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-top: 40px;
+    }
+    .mobile-nav-link {
+      font-family: var(--font-serif);
+      font-size: 32px;
+      font-weight: 400;
+      color: var(--ink);
+    }
+    .mobile-nav-link:hover { color: var(--saffron); }
+
+    /* SEARCH OVERLAY */
+    #search-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(18, 16, 14, 0.94);
+      backdrop-filter: blur(8px);
+      z-index: 110;
+      display: none;
+      opacity: 0;
+      transition: opacity 0.3s var(--ease);
+      padding: 60px 24px;
+      overflow-y: auto;
+    }
+    #search-overlay.open {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      opacity: 1;
+    }
+    .search-box {
+      width: 100%;
+      max-width: 800px;
+      position: relative;
+    }
+    .search-input {
+      width: 100%;
+      padding: 16px 20px 16px 0;
+      font-family: var(--font-serif);
+      font-size: 32px;
+      color: var(--ivory);
+      border-bottom: 1px solid var(--saffron);
+    }
+    .search-input::placeholder { color: rgba(246, 241, 231, 0.35); }
+    .search-results-grid {
+      width: 100%;
+      max-width: 800px;
+      margin-top: 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .search-result-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 18px;
+      border: 1px solid rgba(246, 241, 231, 0.12);
+      border-radius: var(--radius);
+      transition: background-color 0.2s;
+      color: var(--ivory);
+    }
+    .search-result-row:hover {
+      background-color: rgba(185, 138, 62, 0.15);
+      border-color: var(--saffron);
+    }
+
+    /* PREFERENCE PANEL (Lang & Currency) */
+    #pref-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(18, 16, 14, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 120;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    #pref-modal.open { display: flex; }
+    .pref-card {
+      background: var(--ivory);
+      border: 1px solid var(--line);
+      width: 100%;
+      max-width: 500px;
+      padding: 40px;
+      border-radius: var(--radius);
+      position: relative;
+    }
+    .pref-group {
+      margin-top: 24px;
+    }
+    .pref-pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .pref-pill {
+      padding: 8px 16px;
+      border: 1px solid var(--line);
+      font-size: 13px;
+      font-weight: 500;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .pref-pill.selected {
+      background-color: var(--ink);
+      color: var(--ivory);
+      border-color: var(--ink);
+    }
+
+    /* PRODUCT CARD */
+    .product-card {
+      background: var(--ivory);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: transform 0.4s var(--ease), border-color 0.4s var(--ease), box-shadow 0.4s var(--ease);
+      height: 100%;
+    }
+    .product-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--saffron);
+      box-shadow: 0 12px 28px rgba(18,16,14,0.06);
+    }
+    .product-card-art {
+      width: 100%;
+      aspect-ratio: 1 / 1.08;
+      background: #f0ebe0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      position: relative;
+      border-bottom: 1px solid var(--line);
+      overflow: hidden;
+    }
+    .product-card-content {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    .card-sku {
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      color: var(--saffron);
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .card-title {
+      font-family: var(--font-serif);
+      font-size: 18px;
+      line-height: 1.25;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+    .card-formula {
+      font-size: 12px;
+      color: var(--stone);
+      margin-bottom: 16px;
+      flex-grow: 1;
+      line-height: 1.45;
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--line);
+      padding-top: 14px;
+      margin-top: auto;
+    }
+    .card-price {
+      font-family: var(--font-serif);
+      font-size: 19px;
+      font-weight: 500;
+      color: var(--ink);
+    }
+    .wish-toggle {
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--stone);
+      transition: color 0.2s, transform 0.2s;
+    }
+    .wish-toggle:hover {
+      transform: scale(1.12);
+    }
+    .wish-toggle.active { color: #b03030; }
+
+    /* VIEW CONTAINERS */
+    .page-view {
+      display: none;
+      opacity: 0;
+      transition: opacity 0.4s var(--ease);
+      flex-grow: 1;
+    }
+    .page-view.active {
+      display: block;
+      opacity: 1;
+    }
+
+    /* HERO SECTION */
+    .hero-section {
+      min-height: calc(100vh - var(--header-h) - 40px);
+      background: radial-gradient(circle at 60% 40%, #1e3227 0%, #12100E 80%);
+      color: var(--ivory);
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding: 80px 0;
+      overflow: hidden;
+    }
+    .hero-art-bg {
+      position: absolute;
+      right: -80px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 580px;
+      height: 580px;
+      opacity: 0.24;
+      pointer-events: none;
+    }
+    .hero-headline {
+      font-family: var(--font-serif);
+      font-size: clamp(38px, 6vw, 76px);
+      line-height: 1.08;
+      font-weight: 300;
+      max-width: 860px;
+      margin: 16px 0 24px;
+    }
+    .hero-headline em {
+      font-style: italic;
+      color: var(--saffron-soft);
+    }
+    .hero-sub {
+      font-size: clamp(16px, 1.8vw, 19px);
+      color: rgba(246, 241, 231, 0.85);
+      max-width: 640px;
+      line-height: 1.6;
+      margin-bottom: 40px;
+    }
+
+    /* PHILOSOPHY STRIP */
+    .philosophy-strip {
+      background-color: var(--parchment);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding: 40px 0;
+    }
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 32px;
+    }
+    .pillar-item {
+      border-left: 2px solid var(--saffron);
+      padding-left: 18px;
+    }
+    .pillar-name {
+      font-family: var(--font-serif);
+      font-size: 20px;
+      font-weight: 500;
+      margin-bottom: 6px;
+      color: var(--ink);
+    }
+    .pillar-desc {
+      font-size: 13px;
+      color: var(--stone);
+      line-height: 1.5;
+    }
+
+    /* RAIL CAROUSEL */
+    .divisions-rail {
+      display: flex;
+      gap: 24px;
+      overflow-x: auto;
+      padding-bottom: 24px;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: thin;
+    }
+    .division-tile {
+      flex: 0 0 280px;
+      scroll-snap-align: start;
+      background: var(--ivory);
+      border: 1px solid var(--line);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 320px;
+      transition: all 0.3s var(--ease);
+      border-radius: var(--radius);
+    }
+    .division-tile:hover {
+      border-color: var(--saffron);
+      transform: translateY(-4px);
+    }
+
+    /* STATS BAND */
+    .stats-band {
+      background-color: var(--forest);
+      color: var(--ivory);
+      padding: 96px 0;
+      border-top: 1px solid var(--line-light);
+      border-bottom: 1px solid var(--line-light);
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 48px;
+      text-align: center;
+    }
+    .stat-num {
+      font-family: var(--font-serif);
+      font-size: clamp(52px, 7vw, 84px);
+      color: var(--saffron-soft);
+      line-height: 1;
+      font-weight: 300;
+    }
+
+    /* FOOTER */
+    #site-footer {
+      background-color: var(--forest);
+      color: var(--ivory);
+      padding: 96px 0 40px;
+      border-top: 1px solid var(--line-light);
+      margin-top: auto;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 48px;
+      margin-bottom: 72px;
+    }
+    @media (max-width: 900px) {
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+    .footer-col-title {
+      font-family: var(--font-serif);
+      font-size: 20px;
+      margin-bottom: 18px;
+      color: var(--saffron-soft);
+      font-weight: 500;
+    }
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 13px;
+      color: rgba(246, 241, 231, 0.75);
+    }
+    .footer-links a:hover { color: var(--ivory); }
+    .footer-bottom {
+      border-top: 1px solid var(--line-light);
+      padding-top: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+      font-size: 12px;
+      color: rgba(246, 241, 231, 0.6);
+    }
+
+    /* PRELOADER */
+    #preloader {
+      position: fixed;
+      inset: 0;
+      background: var(--ivory);
+      z-index: 200;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.8s var(--ease), visibility 0.8s;
+    }
+    #preloader.fade-out {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    /* ACCORDION */
+    .accordion-item {
+      border-bottom: 1px solid var(--line);
+    }
+    .accordion-header {
+      width: 100%;
+      padding: 20px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: var(--font-serif);
+      font-size: 20px;
+      color: var(--ink);
+      font-weight: 500;
+      cursor: pointer;
+      text-align: left;
+    }
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s var(--ease);
+      font-size: 14px;
+      color: var(--stone);
+      line-height: 1.7;
+    }
+    .accordion-item.active .accordion-content {
+      max-height: 400px;
+      padding-bottom: 20px;
+    }
+    .accordion-icon {
+      transition: transform 0.3s;
+      margin-left: 16px;
+      flex-shrink: 0;
+    }
+    .accordion-item.active .accordion-icon {
+      transform: rotate(45deg);
+    }
+
+    /* MODAL FOR PRINT & SUCCESS */
+    .print-receipt-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(18, 16, 14, 0.7);
+      backdrop-filter: blur(4px);
+      z-index: 150;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      overflow-y: auto;
+    }
+    .print-receipt-modal.open { display: flex; }
+    .receipt-paper {
+      background: var(--ivory);
+      max-width: 620px;
+      width: 100%;
+      padding: 40px;
+      border: 1px solid var(--saffron);
+      border-radius: var(--radius);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+    }
+
+    /* FORM STYLES */
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 500;
+      color: var(--stone);
+    }
+    .form-input, .form-textarea, .form-select {
+      border: 1px solid var(--line);
+      background: var(--ivory);
+      padding: 12px 14px;
+      border-radius: var(--radius);
+      color: var(--ink);
+      font-size: 14px;
+    }
+    .form-input:focus, .form-textarea:focus, .form-select:focus {
+      border-color: var(--saffron);
+    }
+    .form-textarea { resize: vertical; min-height: 100px; }
+
+    /* RESPONSIVE GRIDS */
+    @media (max-width: 860px) {
+      #product-detail-layout,
+      #cart-content-wrapper,
+      .responsive-2col {
+        grid-template-columns: 1fr !important;
+      }
+    }
+
+    @media print {
+      body * { visibility: hidden; }
+      #receipt-modal {
+        position: static !important;
+        background: none !important;
+        padding: 0 !important;
+        display: block !important;
+        overflow: visible !important;
+      }
+      #printable-order-section, #printable-order-section * {
+        visibility: visible;
+      }
+      #printable-order-section {
+        position: relative !important;
+        left: 0 !important;
+        top: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-shadow: none !important;
+        border: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      .no-print { display: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PRELOADER -->
+  <div id="preloader">
+    <div class="brand-logo" style="transform: scale(1.3);">
+      <!-- Added Logo Image -->
+      <img src="C:\Users\lenovo\Desktop\kyorp.com\logo.jpeg" alt="KYORP Logo" style="height: 48px; margin-bottom: 12px; border-radius: 4px;">
+      <span class="logo-word">KYORP</span>
+      <span class="logo-tag">Key to Original Purity</span>
+    </div>
+    <div style="margin-top: 32px; width: 48px; height: 1px; background: var(--saffron);"></div>
+  </div>
+
+  <!-- ANNOUNCEMENT BAR -->
+  <div id="announcement-bar">
+    <span id="announcement-text" data-i18n="announcement">Complimentary standard delivery on all orders above ₹1,999</span>
+    <button type="button" id="announcement-dismiss" aria-label="Dismiss announcement">&times;</button>
+  </div>
+
+  <!-- HEADER -->
+  <header id="site-header">
+    <div class="container header-inner">
+      <!-- Left Navigation -->
+      <div class="header-left">
+        <button type="button" id="mobile-menu-toggle" class="icon-btn" style="display: none;" aria-label="Open menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+
+        <nav class="desktop-nav" style="display: flex; gap: 28px; align-items: center;">
+          <div class="has-dropdown">
+            <a href="#collections" class="nav-link" data-i18n="nav_collections">Collections</a>
+            <!-- Mega Menu (Full-Width Anchored to Header) -->
+            <div class="mega-menu">
+              <div class="container">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: 1px solid var(--line); padding-bottom: 12px;">
+                  <div class="label-caps" data-i18n="master_divisions">Master Divisions • 15 Specialised Ranges</div>
+                  <a href="#collections" style="font-size: 12px; color: var(--saffron); font-weight: 500;" onclick="window.closeMegaMenu()">View Complete Directory &rarr;</a>
+                </div>
+                <div class="mega-grid" id="mega-menu-grid">
+                  <!-- Populated by JS -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="#about" class="nav-link" data-i18n="nav_philosophy">Our Philosophy</a>
+          <a href="#institutional" class="nav-link" data-i18n="nav_institutional">Institutional</a>
+          <a href="#contact" class="nav-link" data-i18n="nav_contact">Contact</a>
+        </nav>
+      </div>
+
+      <!-- Center Logo -->
+      <a href="#home" class="brand-logo" aria-label="KYORP Home">
+        <!-- Added Logo Image -->
+        <img src="C:\Users\lenovo\Desktop\kyorp.com\logo.jpeg" alt="KYORP Logo" style="height: 36px; margin-bottom: 4px; border-radius: 2px;">
+        <span class="logo-word">KYORP</span>
+        <span class="logo-tag" data-i18n="brand_tagline">Key to Original Purity</span>
+      </a>
+
+      <!-- Right Controls -->
+      <div class="header-right">
+        <button type="button" id="btn-search-trigger" class="icon-btn" aria-label="Search formulations">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+        <button type="button" id="btn-pref-trigger" class="icon-btn" aria-label="Language & Currency">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </button>
+        <a href="#wishlist" class="icon-btn" aria-label="Saved Wishlist">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          <span class="badge-count" id="wish-counter">0</span>
+        </a>
+        <a href="#cart" class="icon-btn" aria-label="Order Cart">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span class="badge-count" id="cart-counter">0</span>
+        </a>
+      </div>
+    </div>
+    <div class="scroll-progress" id="scroll-bar"></div>
+  </header>
+
+  <!-- MOBILE MENU -->
+  <div id="mobile-menu">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <span class="label-caps" data-i18n="menu_title">Menu</span>
+      <button type="button" id="mobile-menu-close" class="icon-btn" aria-label="Close menu">&times;</button>
+    </div>
+    <div class="mobile-nav-links">
+      <a href="#home" class="mobile-nav-link" data-i18n="nav_home">Home</a>
+      <a href="#collections" class="mobile-nav-link" data-i18n="nav_collections">Collections</a>
+      <a href="#about" class="mobile-nav-link" data-i18n="nav_philosophy">Our Philosophy</a>
+      <a href="#institutional" class="mobile-nav-link" data-i18n="nav_institutional">Institutional & B2B</a>
+      <a href="#contact" class="mobile-nav-link" data-i18n="nav_contact">Contact</a>
+      <a href="#wishlist" class="mobile-nav-link" data-i18n="nav_wishlist">Saved Wishlist</a>
+      <a href="#cart" class="mobile-nav-link" data-i18n="nav_cart">Order Cart</a>
+    </div>
+    <div>
+      <div class="label-caps" style="margin-bottom: 10px;">KYORP India Private Limited</div>
+      <p style="font-size: 13px; color: var(--stone);">Key to Original Purity • Jaipur & Mumbai</p>
+    </div>
+  </div>
+
+  <!-- SEARCH OVERLAY -->
+  <div id="search-overlay" role="dialog" aria-modal="true" aria-label="Search Formulations">
+    <div style="width: 100%; max-width: 800px; display: flex; justify-content: flex-end;">
+      <button type="button" id="search-close" aria-label="Close search window" style="color: var(--ivory); font-size: 32px; padding: 10px;">&times;</button>
+    </div>
+    <div class="search-box">
+      <input type="text" id="site-search-input" class="search-input" placeholder="Search 429 formulations, ingredients, or divisions..." autocomplete="off" aria-label="Search input">
+    </div>
+    <div class="search-results-grid" id="search-results-container">
+      <!-- Search output -->
+    </div>
+  </div>
+
+  <!-- PREFERENCE MODAL (Language & Currency) -->
+  <div id="pref-modal" role="dialog" aria-modal="true" aria-labelledby="pref-modal-heading">
+    <div class="pref-card">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h3 id="pref-modal-heading" class="serif" style="font-size: 24px;" data-i18n="pref_modal_title">Preferences</h3>
+        <button type="button" id="pref-close" aria-label="Close preferences" style="font-size: 24px;">&times;</button>
+      </div>
+
+      <div class="pref-group">
+        <span class="label-caps" data-i18n="select_language">Language</span>
+        <div class="pref-pill-list" id="lang-picker">
+          <button type="button" class="pref-pill" data-lang="en" aria-pressed="true">English</button>
+          <button type="button" class="pref-pill" data-lang="hi" aria-pressed="false">हिन्दी (Hindi)</button>
+          <button type="button" class="pref-pill" data-lang="fr" aria-pressed="false">Français</button>
+          <button type="button" class="pref-pill" data-lang="es" aria-pressed="false">Español</button>
+          <button type="button" class="pref-pill" data-lang="it" aria-pressed="false">Italiano</button>
+          <button type="button" class="pref-pill" data-lang="de" aria-pressed="false">Deutsch</button>
+        </div>
+      </div>
+
+      <div class="pref-group">
+        <span class="label-caps" data-i18n="select_currency">Currency</span>
+        <div class="pref-pill-list" id="curr-picker">
+          <button type="button" class="pref-pill" data-curr="INR" aria-pressed="true">₹ INR (Indian Rupee)</button>
+          <button type="button" class="pref-pill" data-curr="USD" aria-pressed="false">$ USD (US Dollar)</button>
+          <button type="button" class="pref-pill" data-curr="GBP" aria-pressed="false">£ GBP (British Pound)</button>
+        </div>
+      </div>
+      <div style="margin-top: 32px; text-align: right;">
+        <button type="button" class="btn btn-primary" id="pref-apply" data-i18n="btn_apply">Apply Settings</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN SPA VIEW HOST -->
+  <main id="app-viewport">
+
+    <!-- ==================== VIEW 1: HOME ==================== -->
+    <section id="view-home" class="page-view active">
+      <!-- Hero -->
+      <div class="hero-section">
+        <div class="container" style="position: relative; z-index: 2;">
+          <span class="label-caps text-saffron" data-i18n="hero_eyebrow">Key to Original Purity • Est. 2026</span>
+          <h1 class="hero-headline" data-i18n="hero_title">
+            Where <em>Ancient Ayurveda</em> unites with <em>Modern Clinical Science</em>.
+          </h1>
+          <p class="hero-sub" data-i18n="hero_desc">
+            KYORP is an umbrella consumer health ecosystem spanning 15 specialised divisions and 429 master formulations — rooted in original purity, biotechnology, and evidence-backed care.
+          </p>
+          <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+            <a href="#collections" class="btn btn-gold" data-i18n="btn_explore">Explore 15 Divisions</a>
+            <a href="#about" class="btn btn-outline-light" data-i18n="btn_philosophy">Our Philosophy</a>
+          </div>
+        </div>
+        <div class="hero-art-bg" id="hero-svg-host"></div>
+      </div>
+
+      <!-- Philosophy Strip -->
+      <div class="philosophy-strip">
+        <div class="container">
+          <div class="pillars-grid">
+            <div class="pillar-item">
+              <div class="pillar-name" data-i18n="pillar_1_title">Ancient Indian Ayurveda</div>
+              <div class="pillar-desc" data-i18n="pillar_1_desc">Time-honored Rasayana botanicals, bio-available extracts, and ancestral wellness practices.</div>
+            </div>
+            <div class="pillar-item">
+              <div class="pillar-name" data-i18n="pillar_2_title">Dermatological Science</div>
+              <div class="pillar-desc" data-i18n="pillar_2_desc">Biomimetic lipid architecture, peptide complexes, and clean cosmetic chemistry.</div>
+            </div>
+            <div class="pillar-item">
+              <div class="pillar-name" data-i18n="pillar_3_title">Clinical Validation</div>
+              <div class="pillar-desc" data-i18n="pillar_3_desc">Rigorous evidence-based safety, efficacy testing, and dermatological tolerance.</div>
+            </div>
+            <div class="pillar-item">
+              <div class="pillar-name" data-i18n="pillar_4_title">Original Purity</div>
+              <div class="pillar-desc" data-i18n="pillar_4_desc">Zero adulteration, ethical sourcing from origin, and uncompromising purity in every drop.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- The Ecosystem Rail -->
+      <section style="padding: 100px 0;">
+        <div class="container">
+          <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 40px;">
+            <div>
+              <span class="label-caps" data-i18n="ecosystem_eyebrow">Structured Architecture</span>
+              <h2 class="serif" style="font-size: clamp(28px, 4vw, 42px); font-weight: 400; margin-top: 8px;" data-i18n="ecosystem_title">The KYORP Consumer Health Ecosystem</h2>
+            </div>
+            <a href="#collections" class="nav-link" data-i18n="view_all_divisions">View All 15 Divisions &rarr;</a>
+          </div>
+          <div class="divisions-rail" id="home-divisions-rail">
+            <!-- Injected via JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Flagship Spotlight: Dermalock & Saffron Radiance -->
+      <section style="background-color: var(--parchment); padding: 110px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+        <div class="container">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 64px; align-items: center;">
+            <div id="flagship-art-panel" style="background: var(--ivory); border: 1px solid var(--line); border-radius: var(--radius); padding: 48px; text-align: center;">
+              <!-- Flagship SVG art inserted by JS -->
+            </div>
+            <div>
+              <span class="label-caps" data-i18n="flagship_tag">Hero Biomimetic System</span>
+              <h2 class="serif" style="font-size: clamp(32px, 4vw, 48px); font-weight: 400; margin: 12px 0 20px;">
+                Dermalock™ Barrier Repair Cream <span style="font-size: 20px; color: var(--stone);">(SKU 076)</span>
+              </h2>
+              <p style="color: var(--stone); font-size: 16px; margin-bottom: 24px; line-height: 1.8;" data-i18n="flagship_desc">
+                Engineered with a biomimetic 3:1:1:1 physiological lipid ratio mimicking the natural stratum corneum. Infused with Kashmiri Saffron extract and Centella asiatica to repair micro-fissures and restore structural resilience.
+              </p>
+              <div style="margin-bottom: 32px; display: flex; gap: 24px; flex-wrap: wrap;">
+                <div>
+                  <div class="label-caps" style="color: var(--ink);">HydraRoot™</div>
+                  <div style="font-size: 13px; color: var(--stone);">SomaRoot Deep Moisture Matrix</div>
+                </div>
+                <div>
+                  <div class="label-caps" style="color: var(--ink);">Clinically Tested</div>
+                  <div style="font-size: 13px; color: var(--stone);">Barrier Recovery in 72 Hours</div>
+                </div>
+              </div>
+              <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+                <button type="button" class="btn btn-primary" onclick="window.location.hash='#product?sku=076'" data-i18n="view_formulation">View Formulation Detail</button>
+                <button type="button" class="btn btn-outline" onclick="window.addToCart('076')" data-i18n="add_to_order">Add to Order</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Featured Master Formulations (8 products) -->
+      <section style="padding: 110px 0;">
+        <div class="container">
+          <div style="text-align: center; max-width: 680px; margin: 0 auto 56px;">
+            <span class="label-caps" data-i18n="curated_selection">Master Dossier Curation</span>
+            <h2 class="serif" style="font-size: clamp(30px, 4vw, 44px); font-weight: 400; margin-top: 8px;" data-i18n="featured_title">Signature Formulations</h2>
+            <p class="text-stone" style="font-size: 15px; margin-top: 8px;">Explore core flagships across Skin Science, Body, Hair, Beauty, Oral Science, and Baby Care.</p>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 32px;" id="featured-products-grid">
+            <!-- 8 featured cards injected by JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Key Metrics Band -->
+      <div class="stats-band">
+        <div class="container">
+          <div class="stats-grid">
+            <div>
+              <div class="stat-num">15</div>
+              <div class="label-caps text-ivory" style="margin-top: 12px;" data-i18n="stat_divisions">Specialised Divisions</div>
+              <div style="font-size: 13px; color: rgba(246, 241, 231, 0.7); margin-top: 4px;">From Skin Science to HealthTech</div>
+            </div>
+            <div>
+              <div class="stat-num">429</div>
+              <div class="label-caps text-ivory" style="margin-top: 12px;" data-i18n="stat_skus">Frozen Core SKUs</div>
+              <div style="font-size: 13px; color: rgba(246, 241, 231, 0.7); margin-top: 4px;">Zero generic placeholders</div>
+            </div>
+            <div>
+              <div class="stat-num">6</div>
+              <div class="label-caps text-ivory" style="margin-top: 12px;" data-i18n="stat_languages">Global Languages</div>
+              <div style="font-size: 13px; color: rgba(246, 241, 231, 0.7); margin-top: 4px;">Native Devanagari & Latin</div>
+            </div>
+            <div>
+              <div class="stat-num">30<span style="font-size: 38px;">Y</span></div>
+              <div class="label-caps text-ivory" style="margin-top: 12px;" data-i18n="stat_vision">Long-Term Vision</div>
+              <div style="font-size: 13px; color: rgba(246, 241, 231, 0.7); margin-top: 4px;">A multi-generational house</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Institutional Care Teaser -->
+      <section style="padding: 100px 0; background-color: var(--ivory);">
+        <div class="container">
+          <div style="border: 1px solid var(--line); border-radius: var(--radius); padding: 56px 48px; background: var(--parchment); display: flex; flex-direction: column; gap: 24px;">
+            <span class="label-caps" data-i18n="b2b_eyebrow">Enterprise & Institutional Care</span>
+            <h2 class="serif" style="font-size: clamp(28px, 3.5vw, 42px); font-weight: 400; max-width: 720px;" data-i18n="b2b_title">
+              Hospitality Amenities, Healthcare Essentials & Custom Bulk Dispensers
+            </h2>
+            <p class="text-stone" style="max-width: 680px; font-size: 15px; line-height: 1.8;" data-i18n="b2b_desc">
+              KYORP provides patient care systems (16A), 5-star hotel bespoke amenities (16B), and corporate hygiene (16C) formulated to international standards with biodegradable packaging and volume supply agreements.
+            </p>
+            <div>
+              <a href="#institutional" class="btn btn-primary" data-i18n="btn_explore_inst">Explore Institutional Solutions &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5-Phase Strategic Roadmap -->
+      <section style="padding: 100px 0; border-top: 1px solid var(--line);">
+        <div class="container">
+          <div style="text-align: center; max-width: 720px; margin: 0 auto 56px;">
+            <span class="label-caps" data-i18n="roadmap_tag">Growth Strategy</span>
+            <h2 class="serif" style="font-size: clamp(28px, 4vw, 42px); font-weight: 400; margin-top: 8px;" data-i18n="roadmap_title">30-Year Multigenerational Roadmap</h2>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px;">
+            <div style="border-top: 2px solid var(--saffron); padding-top: 16px;">
+              <span class="label-caps">Phase 1 (Y 1–3)</span>
+              <h4 class="serif" style="font-size: 20px; margin: 8px 0;">Foundational Personal Care</h4>
+              <p style="font-size: 13px; color: var(--stone);">Skin Science, Body Science, Hair Science, Oral Science, and Beauty flagships.</p>
+            </div>
+            <div style="border-top: 2px solid var(--saffron); padding-top: 16px;">
+              <span class="label-caps">Phase 2 (Y 3–5)</span>
+              <h4 class="serif" style="font-size: 20px; margin: 8px 0;">Family & Wellness</h4>
+              <p style="font-size: 13px; color: var(--stone);">Baby Care, Men’s Grooming, Femme, Intimate, and Sun Science expansion.</p>
+            </div>
+            <div style="border-top: 2px solid var(--saffron); padding-top: 16px;">
+              <span class="label-caps">Phase 3 (Y 5–8)</span>
+              <h4 class="serif" style="font-size: 20px; margin: 8px 0;">Consumer Health & OTC</h4>
+              <p style="font-size: 13px; color: var(--stone);">Nutrition, nutraceuticals, clinical dermatological actives, and OTC healthcare.</p>
+            </div>
+            <div style="border-top: 2px solid var(--saffron); padding-top: 16px;">
+              <span class="label-caps">Phase 4 (Y 8–15)</span>
+              <h4 class="serif" style="font-size: 20px; margin: 8px 0;">HealthTech & Devices</h4>
+              <p style="font-size: 13px; color: var(--stone);">KYORP HealthTech non-invasive wellness electronics and diagnostic companions.</p>
+            </div>
+            <div style="border-top: 2px solid var(--saffron); padding-top: 16px;">
+              <span class="label-caps">Phase 5 (Y 15–30)</span>
+              <h4 class="serif" style="font-size: 20px; margin: 8px 0;">Integrated Diagnostics</h4>
+              <p style="font-size: 13px; color: var(--stone);">At-home preventive diagnostic monitoring kits across 8 distinct wellness families.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- ==================== VIEW 2: ABOUT / PHILOSOPHY ==================== -->
+    <section id="view-about" class="page-view">
+      <div style="background-color: var(--parchment); padding: 80px 0; border-bottom: 1px solid var(--line);">
+        <div class="container">
+          <span class="label-caps" data-i18n="about_eyebrow">The Manifesto</span>
+          <h1 class="serif" style="font-size: clamp(36px, 5vw, 64px); font-weight: 300; margin: 12px 0 16px;" data-i18n="about_title">
+            Key to Original Purity
+          </h1>
+          <p style="font-size: 18px; color: var(--stone); max-width: 720px; line-height: 1.7;" data-i18n="about_lead">
+            KYORP India Private Limited was established on a radical standard: that holistic Indian healing principles must not merely coexist with modern bioscience, but cross-validate and elevate it.
+          </p>
+        </div>
+      </div>
+
+      <div class="container" style="padding: 96px 24px;">
+        <div style="max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 64px;">
+
+          <div>
+            <span class="label-caps">01 / The Core Formula</span>
+            <h2 class="serif" style="font-size: 36px; margin: 12px 0 20px;">Ayurveda × Modern Science × Clinical Validation × Original Purity</h2>
+            <p style="color: var(--stone); font-size: 16px; line-height: 1.8;">
+              Too often, Ayurvedic products trade on romance without clinical rigour; conventional dermocosmetics prioritize synthetic quick-fixes while ignoring systemic equilibrium. KYORP resolves this tension by deploying standardized botanical extracts alongside verified biomimetic peptides, ceramides, and vitamins.
+            </p>
+          </div>
+
+          <div class="responsive-2col" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; border-top: 1px solid var(--line); padding-top: 48px;">
+            <div>
+              <h3 class="serif" style="font-size: 24px; margin-bottom: 12px;">Ecosystem, Not a Single Brand</h3>
+              <p style="font-size: 14px; color: var(--stone); line-height: 1.7;">
+                Rather than forcing baby care, clinical dermatology, oral hygiene, and sexual wellness into a confusing single catalog, KYORP is architected into 15 dedicated divisions. Each maintains its own clinical authority and product rigor while upholding master purity benchmarks.
+              </p>
+            </div>
+            <div>
+              <h3 class="serif" style="font-size: 24px; margin-bottom: 12px;">Uncompromising Original Purity</h3>
+              <p style="font-size: 14px; color: var(--stone); line-height: 1.7;">
+                Original Purity means no adulteration, zero heavy metals, single-source botanical harvesting from certified organic terroirs in Kashmir, Kerala, and Himachal Pradesh, verified through batch HPLC analysis.
+              </p>
+            </div>
+          </div>
+
+          <div style="background: var(--parchment); border: 1px solid var(--line); padding: 40px; border-radius: var(--radius);">
+            <span class="label-caps">Corporate Governance</span>
+            <h3 class="serif" style="font-size: 28px; margin: 10px 0;">KYORP India Private Limited</h3>
+            <p style="font-size: 14px; color: var(--stone); line-height: 1.7;">
+              Incorporated under Indian Company Law with dual operational centres in Jaipur and Mumbai. Registered trademarks include KYORP™, Dermalock™, HydraRoot™, and SomaRoot™.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== VIEW 3: COLLECTIONS (ALL 15 DIVISIONS) ==================== -->
+    <section id="view-collections" class="page-view">
+      <div style="background-color: var(--parchment); padding: 72px 0; border-bottom: 1px solid var(--line);">
+        <div class="container">
+          <span class="label-caps" data-i18n="collections_eyebrow">Master Portfolio</span>
+          <h1 class="serif" style="font-size: clamp(34px, 5vw, 56px); font-weight: 300; margin: 10px 0 12px;" data-i18n="collections_title">
+            15 Specialised Divisions
+          </h1>
+          <p style="color: var(--stone); font-size: 16px; max-width: 680px;" data-i18n="collections_sub">
+            The frozen core 429-SKU architecture spanning daily personal care, OTC healthcare, nutritional supplements, and digital wellness devices.
+          </p>
+        </div>
+      </div>
+
+      <div class="container" style="padding: 72px 24px;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 32px;" id="collections-grid-all">
+          <!-- 15 division cards injected by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== VIEW 4: CATEGORY / DIVISION VIEW ==================== -->
+    <section id="view-category" class="page-view">
+      <div id="cat-hero-band" style="background-color: var(--parchment); padding: 64px 0; border-bottom: 1px solid var(--line);">
+        <div class="container">
+          <div style="display: flex; gap: 12px; align-items: center; margin-bottom: 12px;">
+            <a href="#collections" class="label-caps" style="color: var(--stone);">&larr; Collections</a>
+            <span style="color: var(--stone);">/</span>
+            <span class="label-caps" id="cat-badge-status"></span>
+          </div>
+          <h1 class="serif" style="font-size: clamp(34px, 4.5vw, 52px); font-weight: 400;" id="cat-hero-title">Skin Science</h1>
+          <p style="font-size: 15px; color: var(--stone); max-width: 720px; margin-top: 8px;" id="cat-hero-desc"></p>
+        </div>
+      </div>
+
+      <div class="container" style="padding: 40px 24px 80px;">
+        <!-- Filters Toolbar -->
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; padding-bottom: 24px; border-bottom: 1px solid var(--line); margin-bottom: 40px;">
+          <div style="display: flex; gap: 8px; flex-wrap: wrap; align-items: center;" id="cat-type-chips">
+            <!-- Filter chips -->
+          </div>
+          <div style="display: flex; gap: 16px; align-items: center;">
+            <span style="font-size: 12px; color: var(--stone);" id="cat-count-label">Showing 0 products</span>
+            <select id="cat-sort-select" class="form-select" style="font-size: 13px; padding: 6px 12px;" aria-label="Sort products">
+              <option value="sku">Sort: SKU Order</option>
+              <option value="name">Sort: Name A–Z</option>
+              <option value="price-asc">Sort: Price Low to High</option>
+              <option value="price-desc">Sort: Price High to Low</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Products Grid -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 32px;" id="cat-products-grid">
+          <!-- Injected by JS -->
+        </div>
+
+        <!-- Pagination / Load More -->
+        <div style="text-align: center; margin-top: 56px;" id="cat-load-more-wrap">
+          <button type="button" class="btn btn-outline" id="cat-load-more-btn">Load More Formulations</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== VIEW 5: PRODUCT DETAIL VIEW ==================== -->
+    <section id="view-product" class="page-view">
+      <div class="container" style="padding: 48px 24px 96px;">
+        <div style="margin-bottom: 32px; font-size: 12px; color: var(--stone); display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+          <a href="#home">Home</a> / <a href="#collections">Collections</a> / <a href="#category" id="prod-bread-cat">Division</a> / <span style="color: var(--ink);" id="prod-bread-name">Product</span>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start;" id="product-detail-layout">
+          <!-- Left Art -->
+          <div id="product-art-large" style="background: #f0ebe0; border: 1px solid var(--line); border-radius: var(--radius); aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; padding: 48px;">
+            <!-- SVG rendered by JS -->
+          </div>
+
+          <!-- Right Details -->
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span class="label-caps" id="prod-sku-tag">SKU 001</span>
+              <span id="prod-status-badge"></span>
+            </div>
+            <h1 class="serif" style="font-size: clamp(30px, 3.5vw, 44px); font-weight: 500; margin: 12px 0 16px;" id="prod-title">Product Name</h1>
+            <div class="text-stone" style="font-size: 15px; margin-bottom: 24px;" id="prod-formulation">Formulation Description</div>
+
+            <div style="display: flex; align-items: baseline; gap: 16px; margin-bottom: 32px;">
+              <span class="serif" style="font-size: 32px; font-weight: 500;" id="prod-price-tag">₹0</span>
+            </div>
+
+            <!-- Action Area -->
+            <div id="prod-actions-container" style="display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 40px;">
+              <div style="display: flex; border: 1px solid var(--line); border-radius: var(--radius);">
+                <button type="button" style="padding: 10px 16px;" id="qty-minus" aria-label="Decrease quantity">-</button>
+                <input type="text" value="1" id="qty-input" style="width: 44px; text-align: center;" readonly aria-label="Quantity">
+                <button type="button" style="padding: 10px 16px;" id="qty-plus" aria-label="Increase quantity">+</button>
+              </div>
+              <button type="button" class="btn btn-primary" id="prod-add-btn" style="flex-grow: 1;">Add to Order Request</button>
+              <button type="button" class="icon-btn" id="prod-wish-btn" style="border: 1px solid var(--line); width: 48px; height: 48px;" aria-label="Add to Wishlist">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              </button>
+            </div>
+
+            <!-- Accordions -->
+            <div class="accordion-item active">
+              <button type="button" class="accordion-header" aria-expanded="true">
+                <span>Formulation & Rationale</span>
+                <span class="accordion-icon" aria-hidden="true">+</span>
+              </button>
+              <div class="accordion-content" id="acc-formulation-text">
+                Clinically formulated adhering to the KYORP Master Dossier. Formulated free from parabens, mineral oils, synthetic colorants, and phthalates.
+              </div>
+            </div>
+            <div class="accordion-item">
+              <button type="button" class="accordion-header" aria-expanded="false">
+                <span>The Four Pillars</span>
+                <span class="accordion-icon" aria-hidden="true">+</span>
+              </button>
+              <div class="accordion-content">
+                Ancient Indian Ayurveda × Modern Dermatological & Cosmetic Science × Clinical Validation × Original Purity. Certified ethical sourcing from Indian terroirs.
+              </div>
+            </div>
+            <div class="accordion-item">
+              <button type="button" class="accordion-header" aria-expanded="false">
+                <span>Complimentary Dispatch & Care</span>
+                <span class="accordion-icon" aria-hidden="true">+</span>
+              </button>
+              <div class="accordion-content">
+                Dispatched in thermal-shielded, recyclable amber packaging to prevent UV degradation of active botanical phytonutrients.
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Ritual Recommendations -->
+        <div style="margin-top: 110px; border-top: 1px solid var(--line); padding-top: 64px;">
+          <h3 class="serif" style="font-size: 28px; margin-bottom: 32px;" data-i18n="complete_ritual">Complete The Daily Ritual</h3>
+          <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 32px;" id="ritual-related-grid">
+            <!-- 4 related items -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== VIEW 6: INSTITUTIONAL CARE & HOSPITALITY ==================== -->
+    <section id="view-institutional" class="page-view">
+      <div style="background-color: var(--forest); color: var(--ivory); padding: 80px 0; border-bottom: 1px solid var(--line-light);">
+        <div class="container">
+          <span class="label-caps" style="color: var(--saffron-soft);">B2B & Enterprise Portfolio</span>
+          <h1 class="serif" style="font-size: clamp(34px, 5vw, 56px); font-weight: 300; margin: 12px 0 16px;">
+            Institutional Care & Hospitality
+          </h1>
+          <p style="font-size: 16px; color: rgba(246, 241, 231, 0.85); max-width: 720px; line-height: 1.7;">
+            Supplying India’s premier luxury hospitality chains, premier healthcare networks, and corporate campuses with clean, clinical-grade amenities.
+          </p>
+        </div>
+      </div>
+
+      <div class="container" style="padding: 80px 24px;">
+        <div class="responsive-2col" style="display: grid; grid-template-columns: 2fr 1fr; gap: 64px;">
+
+          <div>
+            <!-- Section 16A -->
+            <div style="margin-bottom: 56px;">
+              <span class="label-caps">Catalogue 16A</span>
+              <h2 class="serif" style="font-size: 28px; margin: 8px 0 16px;">Healthcare & Hospital Essentials</h2>
+              <p style="font-size: 14px; color: var(--stone); margin-bottom: 20px;">Designed for patient recovery wings, oncology soothing routines, and clinical hygiene.</p>
+              <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 14px;">
+                <li style="border-bottom: 1px solid var(--line); padding-bottom: 8px;"><strong>Patient Personal Care:</strong> Mild rinse-free bathing lotion, pediatric syndet wash, barrier repair bed-sore cream.</li>
+                <li style="border-bottom: 1px solid var(--line); padding-bottom: 8px;"><strong>Hygiene Systems:</strong> 70% v/v Hospital Hand Sanitiser with Aloe, Chlorhexidine wash formulation.</li>
+                <li style="border-bottom: 1px solid var(--line); padding-bottom: 8px;"><strong>Oral Patient Care:</strong> Paediatric ultra-soft toothbrush, non-foaming post-surgery mouth rinse.</li>
+              </ul>
+            </div>
+
+            <!-- Section 16B -->
+            <div style="margin-bottom: 56px;">
+              <span class="label-caps">Catalogue 16B</span>
+              <h2 class="serif" style="font-size: 28px; margin: 8px 0 16px;">Hotel & Luxury Hospitality Amenities</h2>
+              <p style="font-size: 14px; color: var(--stone); margin-bottom: 20px;">Bespoke formulations scented with Vetiver, Himalayan Deodar, and Kashmiri Saffron.</p>
+              <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 14px;">
+                <li style="border-bottom: 1px solid var(--line); padding-bottom: 8px;"><strong>Guest Bathroom:</strong> Saffron Bathing Soap Bar (30g/50g), HydraSilk Hair Cleanser (40ml/300ml pump).</li>
+                <li style="border-bottom: 1px solid var(--line); padding-bottom: 8px;"><strong>Turndown Amenities:</strong> Sleep Support Pillow Mist, Hydrating Lip Balm, Kansa Face Sculptor.</li>
+                <li style="border-bottom: 1px solid var(--line); padding-bottom: 8px;"><strong>Spa & Wellness:</strong> Warm Saffron Massage Elixir (1L/5L professional dispenser), Body Polishing Salt.</li>
+              </ul>
+            </div>
+
+            <!-- Pack Formats 16D -->
+            <div style="background: var(--parchment); padding: 32px; border: 1px solid var(--line); border-radius: var(--radius);">
+              <span class="label-caps">16D Specification</span>
+              <h3 class="serif" style="font-size: 22px; margin: 8px 0 12px;">Standard Pack Formats</h3>
+              <p style="font-size: 13px; color: var(--stone); line-height: 1.6;">
+                Available in 20–30 ml guest amenities, 50–100 ml personal-use bottles, 300–500 ml wall-mounted tamper-proof locking brackets, and 5L commercial eco-refill bladders.
+              </p>
+            </div>
+          </div>
+
+          <!-- B2B Enquiry Form -->
+          <div>
+            <div style="background: var(--ivory); border: 1px solid var(--line); padding: 36px; border-radius: var(--radius); box-shadow: 0 8px 24px rgba(0,0,0,0.03);">
+              <h3 class="serif" style="font-size: 24px; margin-bottom: 6px;">Institutional Supply Request</h3>
+              <p style="font-size: 13px; color: var(--stone); margin-bottom: 24px;">Our corporate accounts director will review and provide wholesale tiering within 24 hours.</p>
+
+              <form id="inst-form" onsubmit="window.handleInstSubmit(event)">
+                <div class="form-group">
+                  <label>Organisation Name</label>
+                  <input type="text" class="form-input" required placeholder="e.g. Oberoi Hotels, Apollo Hospitals">
+                </div>
+                <div class="form-group">
+                  <label>Organisation Type</label>
+                  <select class="form-select" required>
+                    <option value="hospitality">Luxury Hospitality & Resorts</option>
+                    <option value="healthcare">Hospital / Healthcare Network</option>
+                    <option value="corporate">Corporate Office / Campus</option>
+                    <option value="export">International Distributor</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Contact Person & Title</label>
+                  <input type="text" class="form-input" required placeholder="Dr. / Mr. / Ms. Full Name">
+                </div>
+                <div class="form-group">
+                  <label>Official Email</label>
+                  <input type="email" class="form-input" required placeholder="procurement@organization.com">
+                </div>
+                <div class="form-group">
+                  <label>Estimated Monthly Volume</label>
+                  <input type="text" class="form-input" placeholder="e.g. 5,000 units / 500 liters">
+                </div>
+                <div class="form-group">
+                  <label>Requirements</label>
+                  <textarea class="form-textarea" placeholder="Detail requested items or custom branding inquiries..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Institutional Enquiry</button>
+              </form>
+              <div id="inst-success-msg" style="display: none; margin-top: 20px; padding: 16px; background: rgba(27,42,34,0.08); border: 1px solid var(--forest); border-radius: var(--radius); font-size: 13px; color: var(--forest);">
+                Thank you. Your institutional dossier request has been registered. Reference #KY-INST-882.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== VIEW 7: CONTACT ==================== -->
+    <section id="view-contact" class="page-view">
+      <div style="background-color: var(--parchment); padding: 72px 0; border-bottom: 1px solid var(--line);">
+        <div class="container">
+          <span class="label-caps">Direct Inquiries</span>
+          <h1 class="serif" style="font-size: clamp(34px, 5vw, 52px); font-weight: 300; margin: 10px 0;">Contact KYORP</h1>
+          <p style="color: var(--stone); font-size: 16px; max-width: 680px;">Corporate headquarters, laboratory partnerships, and client concierge.</p>
+        </div>
+      </div>
+
+      <div class="container" style="padding: 80px 24px;">
+        <div class="responsive-2col" style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px;">
+          <!-- Contact Details -->
+          <div>
+            <span class="label-caps">Corporate Office</span>
+            <h2 class="serif" style="font-size: 32px; margin: 8px 0 20px;">KYORP India Private Limited</h2>
+
+            <div style="display: flex; flex-direction: column; gap: 18px; font-size: 14px; color: var(--stone); margin-bottom: 40px;">
+              <div>
+                <strong style="color: var(--ink); display: block; margin-bottom: 4px;">Registered Headquarters</strong>
+                KYORP Heritage House, C-Scheme, Ashok Nagar, Jaipur, Rajasthan 302001, India
+              </div>
+              <div>
+                <strong style="color: var(--ink); display: block; margin-bottom: 4px;">Cosmetic Science & Biotech Labs</strong>
+                Bandra-Kurla Complex (BKC), Mumbai, Maharashtra 400051, India
+              </div>
+              <div>
+                <strong style="color: var(--ink); display: block; margin-bottom: 4px;">Concierge & Client Care</strong>
+                care@kyorp.com • +91 (0) 141 298 4400
+              </div>
+              <div>
+                <strong style="color: var(--ink); display: block; margin-bottom: 4px;">Hours of Operation</strong>
+                Monday to Friday: 09:30 – 18:30 IST
+              </div>
+            </div>
+
+            <!-- Stylised SVG Map -->
+            <div style="border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; background: var(--parchment); text-align: center;">
+              <svg width="100%" height="160" viewBox="0 0 400 160" fill="none">
+                <rect width="400" height="160" fill="#E8DEC9"/>
+                <path d="M40 80 Q120 40 200 90 T360 70" stroke="#B98A3E" stroke-width="2" stroke-dasharray="4 4"/>
+                <circle cx="140" cy="65" r="7" fill="#1B2A22"/>
+                <circle cx="140" cy="65" r="14" stroke="#B98A3E" stroke-width="1.5"/>
+                <text x="160" y="70" fill="#12100E" font-family="Jost" font-size="11" font-weight="600">KYORP JAIPUR HQ</text>
+                <circle cx="260" cy="110" r="7" fill="#1B2A22"/>
+                <circle cx="260" cy="110" r="14" stroke="#B98A3E" stroke-width="1.5"/>
+                <text x="280" y="115" fill="#12100E" font-family="Jost" font-size="11" font-weight="600">MUMBAI LABS</text>
+              </svg>
+              <div style="margin-top: 12px; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--saffron);">
+                Dual Hub Formulation Network
+              </div>
+            </div>
+          </div>
+
+          <!-- General Enquiry Form -->
+          <div style="background: var(--ivory); border: 1px solid var(--line); padding: 40px; border-radius: var(--radius);">
+            <h3 class="serif" style="font-size: 26px; margin-bottom: 24px;">Send a Message</h3>
+            <form id="contact-form" onsubmit="window.handleContactSubmit(event)">
+              <div class="form-group">
+                <label>Your Name</label>
+                <input type="text" class="form-input" required placeholder="Full Name">
+              </div>
+              <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" class="form-input" required placeholder="you@domain.com">
+              </div>
+              <div class="form-group">
+                <label>Topic of Inquiry</label>
+                <select class="form-select">
+                  <option value="general">General Formulation Inquiry</option>
+                  <option value="order">Order Request Assistance</option>
+                  <option value="clinical">Clinical Trial Collaboration</option>
+                  <option value="press">Press & Editorial</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Message</label>
+                <textarea class="form-textarea" required placeholder="How may our specialists assist you?"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary" style="width: 100%;">Transmit Message</button>
+            </form>
+            <div id="contact-success-msg" style="display: none; margin-top: 20px; padding: 16px; background: rgba(27,42,34,0.08); border: 1px solid var(--forest); border-radius: var(--radius); font-size: 13px; color: var(--forest);">
+              Message received. Our executive desk will follow up shortly.
+            </div>
+          </div>
+
+        </div>
+
+        <!-- FAQ Section -->
+        <div style="margin-top: 96px; border-top: 1px solid var(--line); padding-top: 64px; max-width: 800px; margin-left: auto; margin-right: auto;">
+          <h2 class="serif" style="font-size: 32px; text-align: center; margin-bottom: 40px;">Frequently Addressed Topics</h2>
+
+          <div class="accordion-item">
+            <button type="button" class="accordion-header" aria-expanded="false">
+              <span>What distinguishes Original Purity from standard natural claims?</span>
+              <span class="accordion-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="accordion-content">
+              Original Purity enforces unadulterated botanical extraction without synthetic extenders, verified by third-party chromatographic fingerprints, zero parabens, and sustainable ethical wild-harvesting.
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button type="button" class="accordion-header" aria-expanded="false">
+              <span>How does KYORP conduct international order requests?</span>
+              <span class="accordion-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="accordion-content">
+              Orders placed on this master dossier portal operate via an order request protocol. Our concierge confirms shipping logistics, cold-chain stability, and duties tailored to your destination before dispatch.
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button type="button" class="accordion-header" aria-expanded="false">
+              <span>Are OTC Pharma and Clinical Dermatology formulations available globally?</span>
+              <span class="accordion-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="accordion-content">
+              Divisions labeled "In Development" are undergoing jurisdictional regulatory filings (CDSCO, FDA, EMA). You may register for early notification per formulation.
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button type="button" class="accordion-header" aria-expanded="false">
+              <span>Can hotels and hospitals commission private label formulations?</span>
+              <span class="accordion-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="accordion-content">
+              Yes, our Institutional Care division collaborates with luxury hotels and hospital wings for customized dispensers, amenity packaging, and therapeutic scenting.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== VIEW 8: CART & ORDER REQUEST ==================== -->
+    <section id="view-cart" class="page-view">
+      <div style="background-color: var(--parchment); padding: 64px 0; border-bottom: 1px solid var(--line);">
+        <div class="container">
+          <span class="label-caps">Concierge Dispatch</span>
+          <h1 class="serif" style="font-size: clamp(34px, 5vw, 48px); font-weight: 300; margin: 10px 0;">Order Request Summary</h1>
+          <p style="color: var(--stone); font-size: 15px;">Review your curated selections. Note: Order requests are processed directly by our dispatch concierge without online card charging.</p>
+        </div>
+      </div>
+
+      <div class="container" style="padding: 64px 24px;">
+        <div id="cart-content-wrapper" style="display: grid; grid-template-columns: 2fr 1.2fr; gap: 48px;">
+          <!-- Cart Items List -->
+          <div>
+            <div id="cart-items-list" style="display: flex; flex-direction: column; gap: 20px;">
+              <!-- Items injected by JS -->
+            </div>
+            <div id="cart-empty-state" style="display: none; padding: 60px 0; text-align: center;">
+              <h3 class="serif" style="font-size: 28px; margin-bottom: 12px;">Your order request is empty</h3>
+              <p style="color: var(--stone); margin-bottom: 24px;">Discover our master formulations across 15 specialised divisions.</p>
+              <a href="#collections" class="btn btn-primary">Browse Collections</a>
+            </div>
+          </div>
+
+          <!-- Checkout / Summary Panel -->
+          <div id="cart-summary-panel">
+            <div style="background: var(--parchment); border: 1px solid var(--line); padding: 36px; border-radius: var(--radius); position: sticky; top: 100px;">
+              <h3 class="serif" style="font-size: 24px; margin-bottom: 20px; border-bottom: 1px solid var(--line); padding-bottom: 12px;">Order Summary</h3>
+
+              <div style="display: flex; justify-content: space-between; margin-bottom: 12px; font-size: 14px;">
+                <span class="text-stone">Subtotal</span>
+                <span id="cart-subtotal" style="font-weight: 500;">₹0</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; margin-bottom: 12px; font-size: 14px;">
+                <span class="text-stone">Complimentary Courier</span>
+                <span id="cart-shipping" style="color: var(--forest); font-weight: 500;">Calculated</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; margin: 20px 0; border-top: 1px solid var(--line); padding-top: 16px; font-size: 18px;">
+                <span style="font-weight: 600;">Estimated Total</span>
+                <span id="cart-total" class="serif" style="font-size: 24px; font-weight: 600;">₹0</span>
+              </div>
+
+              <!-- Order Request Submission Form -->
+              <form id="order-request-form" onsubmit="window.handleOrderSubmit(event)" style="margin-top: 28px; border-top: 1px solid var(--line); padding-top: 24px;">
+                <div class="form-group">
+                  <label>Full Name</label>
+                  <input type="text" class="form-input" required placeholder="Recipient name" id="order-name">
+                </div>
+                <div class="form-group">
+                  <label>Contact Phone</label>
+                  <input type="tel" class="form-input" required placeholder="+91 ..." id="order-phone">
+                </div>
+                <div class="form-group">
+                  <label>Email Address</label>
+                  <input type="email" class="form-input" required placeholder="For dispatch tracking" id="order-email">
+                </div>
+                <div class="form-group">
+                  <label>Delivery Address</label>
+                  <textarea class="form-textarea" required placeholder="Street address, city, state, postal code" id="order-address"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;">Submit Order Request</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== VIEW 9: WISHLIST SECTION ==================== -->
+    <section id="view-wishlist" class="page-view">
+      <div style="background-color: var(--parchment); padding: 64px 0; border-bottom: 1px solid var(--line);">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 24px;">
+          <div>
+            <span class="label-caps">Personal Dossier</span>
+            <h1 class="serif" style="font-size: clamp(34px, 5vw, 48px); font-weight: 300; margin: 10px 0;" data-i18n="wishlist_title">Saved Formulations Wishlist</h1>
+            <p style="color: var(--stone); font-size: 15px;">Your curated collection of KYORP formulations saved for future rituals and order requests.</p>
+          </div>
+          <div id="wishlist-header-actions" style="display: none; gap: 12px; flex-wrap: wrap;">
+            <button type="button" class="btn btn-primary" onclick="window.addAllWishlistToCart()">Add All to Order Request</button>
+            <button type="button" class="btn btn-outline" onclick="window.clearWishlist()">Clear Wishlist</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="container" style="padding: 64px 24px 96px;">
+        <!-- Wishlist Grid -->
+        <div id="wishlist-items-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 32px;">
+          <!-- Injected by JS -->
+        </div>
+
+        <!-- Empty Wishlist State -->
+        <div id="wishlist-empty-state" style="display: none; padding: 60px 0; text-align: center; max-width: 480px; margin: 0 auto;">
+          <div style="width: 56px; height: 56px; border: 1px solid var(--line); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; color: var(--saffron);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <h3 class="serif" style="font-size: 28px; margin-bottom: 12px;">Your wishlist is currently empty</h3>
+          <p style="color: var(--stone); margin-bottom: 28px; font-size: 14px;">Tap the heart icon on any formulation card across our 15 divisions to save it to your personal dossier.</p>
+          <a href="#collections" class="btn btn-primary">Explore 15 Divisions</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- PRINTABLE RECEIPT MODAL -->
+  <div class="print-receipt-modal" id="receipt-modal" role="dialog" aria-modal="true" aria-label="Order Receipt">
+    <div class="receipt-paper" id="printable-order-section">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 2px solid var(--saffron); padding-bottom: 20px; margin-bottom: 24px;">
+        <div>
+          <h2 class="serif" style="font-size: 32px; letter-spacing: 0.2em; color: var(--ink);">KYORP</h2>
+          <div class="label-caps">Key to Original Purity</div>
+          <div style="font-size: 11px; color: var(--stone); margin-top: 4px;">KYORP India Private Limited</div>
+        </div>
+        <div style="text-align: right;">
+          <div style="font-weight: 600; font-size: 14px;" id="rec-ref">KY-2026-0000</div>
+          <div style="font-size: 12px; color: var(--stone);" id="rec-date">29 Oct 2026</div>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 24px; font-size: 13px; color: var(--stone);" id="rec-recipient-block">
+        <!-- Injected -->
+      </div>
+
+      <div id="rec-items-table" style="margin-bottom: 24px;">
+        <!-- Injected -->
+      </div>
+
+      <div style="border-top: 1px solid var(--line); padding-top: 16px; display: flex; justify-content: space-between; align-items: baseline;">
+        <span style="font-size: 14px; font-weight: 600;">Total Order Value:</span>
+        <span class="serif" style="font-size: 26px; font-weight: 600;" id="rec-total-amount">₹0</span>
+      </div>
+
+      <div style="margin-top: 32px; display: flex; gap: 16px; justify-content: flex-end;" class="no-print">
+        <button type="button" class="btn btn-outline" onclick="window.print()">Print Official Summary</button>
+        <button type="button" class="btn btn-primary" onclick="window.closeReceiptModal()">Complete</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- IN-PAGE LUXURY NOTIFICATION TOAST -->
+  <div id="toast-notify" role="status" aria-live="polite" style="position: fixed; bottom: 32px; right: 32px; background: var(--forest); color: var(--ivory); padding: 16px 24px; border: 1px solid var(--saffron); border-radius: var(--radius); box-shadow: 0 10px 30px rgba(0,0,0,0.25); z-index: 300; display: none; align-items: center; gap: 12px; font-size: 13px; letter-spacing: 0.05em; transition: opacity 0.3s;">
+    <span style="color: var(--saffron-soft); font-size: 16px;">✦</span>
+    <span id="toast-msg">Notification text</span>
+  </div>
+
+  <!-- SITE FOOTER -->
+  <footer id="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1: Brand Statement -->
+        <div>
+          <div class="brand-logo" style="align-items: flex-start; margin-bottom: 16px;">
+            <!-- Added Logo Image -->
+            <img src="C:\Users\lenovo\Desktop\kyorp.com\logo.jpeg" alt="KYORP Logo" style="height: 40px; margin-bottom: 12px; border-radius: 2px;">
+            <span class="logo-word" style="color: var(--ivory);">KYORP</span>
+            <span class="logo-tag" style="color: var(--saffron-soft);">Key to Original Purity</span>
+          </div>
+          <p style="font-size: 13px; line-height: 1.7; color: rgba(246, 241, 231, 0.75); max-width: 380px;">
+            A premier Indian consumer health ecosystem uniting Ancient Ayurveda, biotechnology, cosmetic science, oral care, nutrition, and non-invasive HealthTech.
+          </p>
+          <div style="margin-top: 24px; font-size: 12px; color: var(--saffron-soft);">
+            KYORP India Private Limited • Est. 2026
+          </div>
+        </div>
+
+        <!-- Col 2: Core Divisions -->
+        <div>
+          <div class="footer-col-title" data-i18n="footer_divisions">Divisions</div>
+          <div class="footer-links">
+            <a href="#category?d=skin-science">Skin Science (76)</a>
+            <a href="#category?d=body-science">Body Science (24)</a>
+            <a href="#category?d=hair-science">Hair Science (18)</a>
+            <a href="#category?d=beauty">KYORP Beauty (40)</a>
+            <a href="#category?d=oral-science">Oral Science (22)</a>
+            <a href="#category?d=baby">KYORP Baby (24)</a>
+            <a href="#collections">All 15 Divisions &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Col 3: Company & Governance -->
+        <div>
+          <div class="footer-col-title" data-i18n="footer_company">Company</div>
+          <div class="footer-links">
+            <a href="#about">Our Philosophy</a>
+            <a href="#institutional">Institutional & Hospitality</a>
+            <a href="#wishlist">Saved Wishlist</a>
+            <a href="#contact">Contact Concierge</a>
+            <a href="javascript:void(0)" onclick="window.openPrefModal()">Language & Currency</a>
+          </div>
+        </div>
+
+        <!-- Col 4: Newsletter & Direct Dispatch -->
+        <div>
+          <div class="footer-col-title" data-i18n="footer_bulletin">Formulation Bulletin</div>
+          <p style="font-size: 12px; color: rgba(246, 241, 231, 0.7); margin-bottom: 16px;">
+            Periodic research briefings on botanical biotechnology, clinical barrier studies, and limited harvest releases.
+          </p>
+          <form id="newsletter-form" onsubmit="window.handleNewsletter(event)" style="display: flex; flex-direction: column; gap: 10px;">
+            <input type="email" required placeholder="Enter your email" aria-label="Email for newsletter" style="background: rgba(246,241,231,0.08); border: 1px solid rgba(246,241,231,0.2); padding: 10px 14px; font-size: 13px; color: var(--ivory); border-radius: var(--radius);">
+            <button type="submit" class="btn btn-gold" style="padding: 10px 20px; font-size: 11px;">Join The Circle</button>
+          </form>
+          <div id="newsletter-thanks" style="display: none; font-size: 12px; color: var(--saffron-soft); margin-top: 8px;">
+            You are enrolled in the KYORP Research Circle.
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 KYORP India Private Limited. All master formulations, Dermalock™, HydraRoot™, and SomaRoot™ are protected trademarks.
+        </div>
+        <div style="display: flex; gap: 24px;">
+          <a href="javascript:window.scrollTo({top:0, behavior:'smooth'})" style="color: var(--saffron-soft);">Back to Top &uarr;</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       EMBEDDED CLIENT SCRIPT (NO EXTERNAL LIBRARIES, CLASSIC JAVASCRIPT)
+       ========================================================================== -->
+  <script>
+    (function() {
+      "use strict";
+
+      /* ==========================================================================
+         0. SECURITY HELPER (XSS SANITIZATION)
+         ========================================================================== */
+      function escapeHTML(str) {
+        return String(str).replace(/[&<>'"]/g, tag => ({
+          '&': '&amp;',
+          '<': '&lt;',
+          '>': '&gt;',
+          "'": '&#39;',
+          '"': '&quot;'
+        }[tag]));
+      }
+
+      /* ==========================================================================
+         1. CONFIG & TRANSLATION DICTIONARIES
+         ========================================================================== */
+      const CONFIG = {
+        brand: {
+          name: "KYORP",
+          legalName: "KYORP India Private Limited",
+          tagline: "Key to Original Purity"
+        },
+        contact: {
+          email: "care@kyorp.com",
+          phone: "+91 141 298 4400",
+          address: "KYORP Heritage House, C-Scheme, Jaipur 302001, India",
+          hours: "Mon - Fri: 09:30 - 18:30 IST"
+        },
+        currencies: {
+          INR: { symbol: "₹", locale: "en-IN", rateFromINR: 1 },
+          USD: { symbol: "$", locale: "en-US", rateFromINR: 0.012 },
+          GBP: { symbol: "£", locale: "en-GB", rateFromINR: 0.0095 }
+        },
+        shippingThresholdINR: 1999,
+        flatShippingINR: 150
+      };
+
+      const STRINGS = {
+        en: {
+          brand_tagline: "Key to Original Purity",
+          nav_collections: "Collections",
+          nav_philosophy: "Our Philosophy",
+          nav_institutional: "Institutional",
+          nav_contact: "Contact",
+          nav_home: "Home",
+          nav_wishlist: "Saved Wishlist",
+          nav_cart: "Order Cart",
+          wishlist_title: "Saved Formulations Wishlist",
+          announcement: "Complimentary standard delivery on all orders above ₹1,999",
+          hero_eyebrow: "Key to Original Purity • Est. 2026",
+          hero_title: "Where Ancient Ayurveda unites with Modern Clinical Science.",
+          hero_desc: "KYORP is an umbrella consumer health ecosystem spanning 15 specialised divisions and 429 master formulations — rooted in original purity, biotechnology, and evidence-backed care.",
+          btn_explore: "Explore 15 Divisions",
+          btn_philosophy: "Our Philosophy",
+          pillar_1_title: "Ancient Indian Ayurveda",
+          pillar_1_desc: "Time-honored Rasayana botanicals, bio-available extracts, and ancestral wellness practices.",
+          pillar_2_title: "Dermatological Science",
+          pillar_2_desc: "Biomimetic lipid architecture, peptide complexes, and clean cosmetic chemistry.",
+          pillar_3_title: "Clinical Validation",
+          pillar_3_desc: "Rigorous evidence-based safety, efficacy testing, and dermatological tolerance.",
+          pillar_4_title: "Original Purity",
+          pillar_4_desc: "Zero adulteration, ethical sourcing from origin, and uncompromising purity in every drop.",
+          ecosystem_eyebrow: "Structured Architecture",
+          ecosystem_title: "The KYORP Consumer Health Ecosystem",
+          view_all_divisions: "View All 15 Divisions →",
+          flagship_tag: "Hero Biomimetic System",
+          flagship_desc: "Engineered with a biomimetic 3:1:1:1 physiological lipid ratio mimicking the natural stratum corneum. Infused with Kashmiri Saffron extract and Centella asiatica to repair micro-fissures and restore structural resilience.",
+          view_formulation: "View Formulation Detail",
+          add_to_order: "Add to Order",
+          curated_selection: "Master Dossier Curation",
+          featured_title: "Signature Formulations",
+          stat_divisions: "Specialised Divisions",
+          stat_skus: "Frozen Core SKUs",
+          stat_languages: "Global Languages",
+          stat_vision: "Long-Term Vision",
+          b2b_eyebrow: "Enterprise & Institutional Care",
+          b2b_title: "Hospitality Amenities, Healthcare Essentials & Custom Bulk Dispensers",
+          b2b_desc: "KYORP provides patient care systems (16A), 5-star hotel bespoke amenities (16B), and corporate hygiene (16C) formulated to international standards with biodegradable packaging and volume supply agreements.",
+          btn_explore_inst: "Explore Institutional Solutions →",
+          roadmap_tag: "Growth Strategy",
+          roadmap_title: "30-Year Multigenerational Roadmap",
+          complete_ritual: "Complete The Daily Ritual",
+          master_divisions: "Master Divisions • 15 Specialised Ranges",
+          pref_modal_title: "Preferences",
+          select_language: "Language",
+          select_currency: "Currency",
+          btn_apply: "Apply Settings"
+        },
+        hi: {
+          brand_tagline: "शुद्धता की मूल कुंजी",
+          nav_collections: "संग्रह",
+          nav_philosophy: "हमारा दर्शन",
+          nav_institutional: "संस्थागत देखभाल",
+          nav_contact: "संपर्क",
+          nav_home: "मुखपृष्ठ",
+          nav_wishlist: "पसंदीदा सूची",
+          nav_cart: "ऑर्डर सूची",
+          wishlist_title: "सहेजे गए फॉर्मूलेशन (विशलिस्ट)",
+          announcement: "₹1,999 से अधिक के सभी ऑर्डरों पर मानार्थ सुरक्षित वितरण",
+          hero_eyebrow: "शुद्धता की मूल कुंजी • स्थापना 2026",
+          hero_title: "जहाँ प्राचीन आयुर्वेद और आधुनिक त्वचा विज्ञान का संगम होता है।",
+          hero_desc: "क्योर्प 15 विशेषज्ञ डिवीजनों और 429 वैज्ञानिक फॉर्मूलेशनों में फैला एक समग्र उपभोक्ता स्वास्थ्य तंत्र है।",
+          btn_explore: "15 डिवीजनों का अन्वेषण करें",
+          btn_philosophy: "हमारा दर्शन",
+          pillar_1_title: "प्राचीन भारतीय आयुर्वेद",
+          pillar_1_desc: "प्रामाणिक रसायन जड़ी-बूटियाँ और जैव-सक्रिय रस।",
+          pillar_2_title: "आधुनिक त्वचा विज्ञान",
+          pillar_2_desc: "बायोमिमेटिक लिपिड और उन्नत पेप्टाइड संरचना।",
+          pillar_3_title: "नैदानिक सत्यापन",
+          pillar_3_desc: "कठोर सुरक्षा, प्रभावशीलता और त्वचा सहिष्णुता परीक्षण।",
+          pillar_4_title: "मूल शुद्धता",
+          pillar_4_desc: "शून्य मिलावट और कड़े जैविक स्रोत से सीधे निष्कर्षण।",
+          ecosystem_eyebrow: "संगठित संरचना",
+          ecosystem_title: "क्योर्प उपभोक्ता स्वास्थ्य पारिस्थितिकी तंत्र",
+          view_all_divisions: "सभी 15 डिवीजन देखें →",
+          flagship_tag: "प्रमुख बायोमिमेटिक लिपिड सिस्टम",
+          flagship_desc: "कश्मीरी केसर और सेंटेला एशियाटिका से समृद्ध डर्मालोक™ बैरियर रिपेयर क्रीम।",
+          view_formulation: "फॉर्मूलेशन विवरण देखें",
+          add_to_order: "ऑर्डर में जोड़ें",
+          curated_selection: "मास्टर चयन",
+          featured_title: "हस्ताक्षर फॉर्मूलेशन",
+          stat_divisions: "विशेषज्ञ डिवीजन",
+          stat_skus: "निश्चित कोर एसकेयू",
+          stat_languages: "वैश्विक भाषाएँ",
+          stat_vision: "दीर्घकालिक दृष्टि",
+          b2b_eyebrow: "संस्थागत देखभाल एवं आतिथ्य",
+          b2b_title: "अस्पताल आवश्यकताएँ एवं होटल सुविधाएं",
+          b2b_desc: "अंतरराष्ट्रीय मानकों के अनुसार रोगी व्यक्तिगत देखभाल और लक्जरी होटल सुइट किट।",
+          btn_explore_inst: "संस्थागत समाधान देखें →",
+          roadmap_tag: "विकास योजना",
+          roadmap_title: "30-वर्षीय बहु-पीढ़ी रोडमैप",
+          complete_ritual: "दैनिक अनुष्ठान पूर्ण करें",
+          master_divisions: "मास्टर डिवीजन • 15 विशेषज्ञ श्रेणियां",
+          pref_modal_title: "प्राथमिकताएं",
+          select_language: "भाषा",
+          select_currency: "मुद्रा",
+          btn_apply: "लागू करें"
+        },
+        fr: {
+          brand_tagline: "Clé de la Pureté Originelle",
+          nav_collections: "Collections",
+          nav_philosophy: "Notre Philosophie",
+          nav_institutional: "Institutionnel",
+          nav_contact: "Contact",
+          nav_home: "Accueil",
+          nav_wishlist: "Liste de Souhaits",
+          nav_cart: "Panier",
+          wishlist_title: "Formulations Enregistrées",
+          announcement: "Livraison offerte dès ₹1,999 de commande",
+          hero_eyebrow: "Clé de la Pureté Originelle • Fondé en 2026",
+          hero_title: "L'Ayurveda Ancestral Uni à la Science Clinique Moderne.",
+          hero_desc: "KYORP est un écosystème de santé grand public de 15 divisions et 429 formulations maîtresses.",
+          btn_explore: "Explorer les 15 Divisions",
+          btn_philosophy: "Notre Philosophie",
+          pillar_1_title: "Ayurveda Ancestral Indien",
+          pillar_1_desc: "Botaniques adaptogènes et extraits hautement biodisponibles.",
+          pillar_2_title: "Science Dermatologique",
+          pillar_2_desc: "Architecture lipidique biomimétique et complexes peptidiques.",
+          pillar_3_title: "Validation Clinique",
+          pillar_3_desc: "Preuves scientifiques d'efficacité et tolérance dermatologique.",
+          pillar_4_title: "Pureté Originelle",
+          pillar_4_desc: "Zéro falsification, approvisionnement direct et pureté sans compromis.",
+          ecosystem_eyebrow: "Architecture Structurée",
+          ecosystem_title: "L'Écosystème de Santé KYORP",
+          view_all_divisions: "Voir les 15 divisions →",
+          flagship_tag: "Système Lipidique Biomimétique",
+          flagship_desc: "Crème réparatrice de barrière cutanée Dermalock™ avec safran du Cachemire.",
+          view_formulation: "Détails de Formulation",
+          add_to_order: "Ajouter à la Demande",
+          curated_selection: "Sélection Signature",
+          featured_title: "Formulations Signatures",
+          stat_divisions: "Divisions Spécialisées",
+          stat_skus: "SKUs Enregistrés",
+          stat_languages: "Langues Mondiales",
+          stat_vision: "Vision Durable",
+          b2b_eyebrow: "Soin Institutionnel & Hôtellerie",
+          b2b_title: "Soins Hospitaliers & Produits d'Accueil Hôteliers",
+          b2b_desc: "Solutions d'hygiène et de confort patient aux normes internationales.",
+          btn_explore_inst: "Solutions Institutionnelles →",
+          roadmap_tag: "Stratégie de Croissance",
+          roadmap_title: "Feuille de Route sur 30 Ans",
+          complete_ritual: "Complétez le Rituel",
+          master_divisions: "Divisions Maîtresses • 15 Gammes Spécialisées",
+          pref_modal_title: "Préférences",
+          select_language: "Langue",
+          select_currency: "Devise",
+          btn_apply: "Appliquer"
+        },
+        es: {
+          brand_tagline: "Clave de la Pureza Original",
+          nav_collections: "Colecciones",
+          nav_philosophy: "Nuestra Filosofía",
+          nav_institutional: "Institucional",
+          nav_contact: "Contacto",
+          nav_home: "Inicio",
+          nav_wishlist: "Lista de Deseos",
+          nav_cart: "Carrito",
+          wishlist_title: "Formulaciones Guardadas",
+          announcement: "Envío de cortesía en pedidos superiores a ₹1,999",
+          hero_eyebrow: "Clave de la Pureza Original • Est. 2026",
+          hero_title: "Donde el Ayurveda Ancestral se Une a la Ciencia Clínica.",
+          hero_desc: "KYORP es un ecosistema de salud con 15 divisiones y 429 formulaciones maestras.",
+          btn_explore: "Explorar 15 Divisiones",
+          btn_philosophy: "Nuestra Filosofía",
+          pillar_1_title: "Ayurveda Ancestral",
+          pillar_1_desc: "Botánicos Rasayana y extractos puros.",
+          pillar_2_title: "Ciencia Dermatológica",
+          pillar_2_desc: "Estructura lipídica biomimética y péptidos.",
+          pillar_3_title: "Validación Clínica",
+          pillar_3_desc: "Ensayos de eficacia rigurosos y tolerancia.",
+          pillar_4_title: "Pureza Original",
+          pillar_4_desc: "Cero adulteración y origen certificado.",
+          ecosystem_eyebrow: "Arquitectura Estructurada",
+          ecosystem_title: "El Ecosistema de Salud KYORP",
+          view_all_divisions: "Ver las 15 Divisiones →",
+          flagship_tag: "Sistema Biomimético Insignia",
+          flagship_desc: "Crema reparadora de barrera Dermalock™ con azafrán de Cachemira.",
+          view_formulation: "Ver Formulación",
+          add_to_order: "Agregar a la Orden",
+          curated_selection: "Selección Maestra",
+          featured_title: "Formulaciones Destacadas",
+          stat_divisions: "Divisiones",
+          stat_skus: "SKUs Maestros",
+          stat_languages: "Idiomas",
+          stat_vision: "Visión 30 Años",
+          b2b_eyebrow: "Cuidado Institucional y Hospitalidad",
+          b2b_title: "Amenidades de Hotel y Cuidado Sanitario",
+          b2b_desc: "Sistemas higiénicos y cuidado de pacientes para cadenas de prestigio.",
+          btn_explore_inst: "Ver Soluciones B2B →",
+          roadmap_tag: "Estrategia",
+          roadmap_title: "Ruta Estratégica a 30 Años",
+          complete_ritual: "Completar el Ritual",
+          master_divisions: "Divisiones Principales",
+          pref_modal_title: "Preferencias",
+          select_language: "Idioma",
+          select_currency: "Moneda",
+          btn_apply: "Guardar"
+        },
+        it: {
+          brand_tagline: "Chiave della Purezza Originale",
+          nav_collections: "Collezioni",
+          nav_philosophy: "Nostra Filosofia",
+          nav_institutional: "Istituzionale",
+          nav_contact: "Contatto",
+          nav_home: "Home",
+          nav_wishlist: "Preferiti",
+          nav_cart: "Carrello",
+          wishlist_title: "Formulazioni Salvate",
+          announcement: "Consegna gratuita per ordini superiori a ₹1.999",
+          hero_eyebrow: "Chiave della Purezza Originale • Est. 2026",
+          hero_title: "L'Antico Ayurveda Incontra la Scienza Clinica Moderna.",
+          hero_desc: "Ecosistema di salute del consumatore con 15 divisioni e 429 formulazioni.",
+          btn_explore: "Esplora 15 Divisioni",
+          btn_philosophy: "Nostra Filosofia",
+          pillar_1_title: "Ayurveda Tradizionale",
+          pillar_1_desc: "Estratti botanici puri e pratiche rigenerative.",
+          pillar_2_title: "Scienza Dermatologica",
+          pillar_2_desc: "Lipidi biomimetici e biotecnologia avanzata.",
+          pillar_3_title: "Validazione Clinica",
+          pillar_3_desc: "Massima sicurezza ed efficacia certificata.",
+          pillar_4_title: "Purezza Originale",
+          pillar_4_desc: "Nessuna sofisticazione e tracciabilità all'origine.",
+          ecosystem_eyebrow: "Architettura Strutturata",
+          ecosystem_title: "L'Ecosistema KYORP",
+          view_all_divisions: "Tutte le 15 Divisioni →",
+          flagship_tag: "Sistema Biomimetico",
+          flagship_desc: "Crema barriera Dermalock™ con zafferano del Kashmir.",
+          view_formulation: "Dettagli Formulazione",
+          add_to_order: "Aggiungi",
+          curated_selection: "Selezione Esclusiva",
+          featured_title: "Formulazioni d'Autore",
+          stat_divisions: "Divisioni",
+          stat_skus: "Prodotti Registrati",
+          stat_languages: "Lingue",
+          stat_vision: "Visione 30 Anni",
+          b2b_eyebrow: "Ospitalità e Istituzionale",
+          b2b_title: "Linea Cortesia Hotel & Presidi Ospedalieri",
+          b2b_desc: "Formulazioni d'eccellenza per strutture sanitarie e alberghi di lusso.",
+          btn_explore_inst: "Soluzioni Istituzionali →",
+          roadmap_tag: "Piano di Crescita",
+          roadmap_title: "Strategia a 30 Anni",
+          complete_ritual: "Completa il Rituale",
+          master_divisions: "15 Divisioni KYORP",
+          pref_modal_title: "Preferenze",
+          select_language: "Lingua",
+          select_currency: "Valuta",
+          btn_apply: "Salva"
+        },
+        de: {
+          brand_tagline: "Schlüssel zur Ursprünglichen Reinheit",
+          nav_collections: "Kollektionen",
+          nav_philosophy: "Unsere Philosophie",
+          nav_institutional: "Institutionell",
+          nav_contact: "Kontakt",
+          nav_home: "Startseite",
+          nav_wishlist: "Wunschliste",
+          nav_cart: "Bestellung",
+          wishlist_title: "Gespeicherte Formulierungen",
+          announcement: "Kostenlose Lieferung ab ₹1.999 Bestellwert",
+          hero_eyebrow: "Schlüssel zur Ursprünglichen Reinheit • Gegr. 2026",
+          hero_title: "Wo Antikes Ayurveda auf Moderne Klinische Wissenschaft Trifft.",
+          hero_desc: "KYORP ist ein ganzheitliches Gesundheitsökosystem mit 15 Divisionen und 429 Formulierungen.",
+          btn_explore: "15 Divisionen Entdecken",
+          btn_philosophy: "Unsere Philosophie",
+          pillar_1_title: "Antikes Indisches Ayurveda",
+          pillar_1_desc: "Wertvolle Rasayana-Pflanzen und naturreine Extrakte.",
+          pillar_2_title: "Dermatologische Wissenschaft",
+          pillar_2_desc: "Biomimetische Lipidsysteme und Peptide.",
+          pillar_3_title: "Klinische Validierung",
+          pillar_3_desc: "Strenge Wirksamkeits- und Verträglichkeitstests.",
+          pillar_4_title: "Ursprüngliche Reinheit",
+          pillar_4_desc: "Unverfälscht, nachhaltig und streng kontrolliert.",
+          ecosystem_eyebrow: "Strukturierte Architektur",
+          ecosystem_title: "Das KYORP Gesundheits-Ökosystem",
+          view_all_divisions: "Alle 15 Divisionen →",
+          flagship_tag: "Biomimetisches Heilsystem",
+          flagship_desc: "Dermalock™ Barriere-Reparaturcreme mit Kaschmir-Safran.",
+          view_formulation: "Formulierung Ansehen",
+          add_to_order: "Zur Bestellung",
+          curated_selection: "Signatur-Auswahl",
+          featured_title: "Meisterformulierungen",
+          stat_divisions: "Fachdivisionen",
+          stat_skus: "Gelistete SKUs",
+          stat_languages: "Sprachen",
+          stat_vision: "30-Jahre-Vision",
+          b2b_eyebrow: "Institutionelle Pflege & Hotellerie",
+          b2b_title: "Hotelkosmetik und Klinische Pflegesysteme",
+          b2b_desc: "Hochreine Pflege für Kliniken und Luxushotels.",
+          btn_explore_inst: "Institutionelle Lösungen →",
+          roadmap_tag: "Wachstumsstrategie",
+          roadmap_title: "30-Jahre-Entwicklungsplan",
+          complete_ritual: "Das Ritual Vollenden",
+          master_divisions: "Hauptdivisionen",
+          pref_modal_title: "Einstellungen",
+          select_language: "Sprache",
+          select_currency: "Währung",
+          btn_apply: "Übernehmen"
+        }
+      };
+
+      /* ==========================================================================
+         2. DIVISIONS METADATA (15 DIVISIONS, 429 SKUs)
+         ========================================================================== */
+      const DIVISIONS = [
+        { id: "skin-science", num: "01", name: "Skin Science", range: "001–076", count: 76, status: "live", desc: "Treatment serums, barrier repair, cleansers, toners, essences, face masks, and facial oils.", minPrice: 899, maxPrice: 3499, tone: "#1B2A22" },
+        { id: "body-science", num: "02", name: "Body Science", range: "077–100", count: 24, status: "live", desc: "Radiance body wash, polishing scrubs, rich body butters, dry oils, and syndet bars.", minPrice: 399, maxPrice: 1499, tone: "#7B5E3C" },
+        { id: "hair-science", num: "03", name: "Hair Science", range: "101–118", count: 18, status: "live", desc: "Hair strengthening oils, deep repair shampoos, scalp growth serums, and masks.", minPrice: 499, maxPrice: 1999, tone: "#2D3E35" },
+        { id: "beauty", num: "04", name: "KYORP Beauty", range: "119–158", count: 40, status: "live", desc: "Complexion skin tints, mineral foundations, cream blush, kajal, lip balms, and satin lipsticks.", minPrice: 499, maxPrice: 2499, tone: "#9A4B3A" },
+        { id: "oral-science", num: "05", name: "Oral Science", range: "159–180", count: 22, status: "live", desc: "Botanical gum care, desensitizing formulas, charcoal toothbrushes, and oral rinses.", minPrice: 149, maxPrice: 799, tone: "#355B66" },
+        { id: "baby", num: "06", name: "KYORP Baby", range: "181–204", count: 24, status: "live", desc: "Pediatric shampoos, diaper rash creams, massage oils, and talc-free soothing powders.", minPrice: 249, maxPrice: 1299, tone: "#A88D6A" },
+        { id: "men", num: "07", name: "KYORP Men", range: "205–214", count: 10, status: "live", desc: "Beard oils, after-shave calming balms, charcoal cleansers, and scalp styling tonics.", minPrice: 499, maxPrice: 1799, tone: "#23262A" },
+        { id: "femme", num: "08", name: "KYORP Femme", range: "215–230", count: 16, status: "live", desc: "Organic cotton menstrual pads, cramp relief roll-ons, and soothing herbal teas.", minPrice: 199, maxPrice: 999, tone: "#824652" },
+        { id: "intimate", num: "09", name: "KYORP Intimate", range: "231–252", count: 22, status: "live", desc: "pH-balanced washes, pure botanical lubricants, post-intimacy soothing gels, and care kits.", minPrice: 249, maxPrice: 999, tone: "#8F5E4B" },
+        { id: "sun-science", num: "10", name: "Sun Science", range: "253–262", count: 10, status: "live", desc: "Invisible daily fluids SPF 50+, mineral matte shields, and cooling after-sun gels.", minPrice: 599, maxPrice: 1499, tone: "#B37C2C" },
+        { id: "clinical-dermatology", num: "11", name: "Clinical Dermatology", range: "263–274", count: 12, status: "development", desc: "Medical-grade actives, 10% Niacinamide, pure Retinol, Centella Cica balms, and BHA peels.", minPrice: 1199, maxPrice: 3899, tone: "#3E4957" },
+        { id: "pharma-otc", num: "12", name: "KYORP Pharma (OTC)", range: "275–319", count: 45, status: "development", desc: "Ayurvedic cough syrups, throat lozenges, burn relief gels, and antiseptic ointments.", minPrice: 199, maxPrice: 899, tone: "#30523C" },
+        { id: "nutrition", num: "13", name: "KYORP Nutrition", range: "320–364", count: 45, status: "development", desc: "Saffron Ashwagandha, marine collagen peptides, pure Shilajit, and vegan Omega-3 algal oil.", minPrice: 699, maxPrice: 2999, tone: "#5F6D38" },
+        { id: "healthtech", num: "14", name: "KYORP HealthTech", range: "365–404", count: 40, status: "development", desc: "Sonic microcurrent sculptors, red light scalp therapy, pulse oximeters, and smart scales.", minPrice: 1999, maxPrice: 8999, tone: "#414756" },
+        { id: "lifestyle", num: "15", name: "KYORP Lifestyle", range: "405–429", count: 25, status: "live", desc: "Mulberry silk sleep masks, handcrafted copper carafes, Kansa wands, and yoga mats.", minPrice: 799, maxPrice: 4999, tone: "#7F6756" }
+      ];
+
+      /* ==========================================================================
+         3. 429 COMPLETE FROZEN CORE MASTER SKU REGISTER
+         ========================================================================== */
+      const RAW_VERBATIM_1_TO_192 = [
+        [1,"Kyorp Saffron Radiance Serum","Radiance serum","serum"],
+        [2,"Dermalock Barrier Serum","Barrier-repair serum","serum"],
+        [3,"Youth Restore Elixir Serum","Anti-ageing restorative serum","serum"],
+        [4,"Vitamin Infusion Bright Serum","Brightening serum","serum"],
+        [5,"HydraRoot Deep Moist Serum","Hydrating serum","serum"],
+        [6,"Kasturi Glow Activator","Botanical radiance treatment","treatment"],
+        [7,"Pigment Correct Serum","Pigmentation-correction serum","serum"],
+        [8,"Under-Eye Repair Serum","Eye-contour treatment","serum"],
+        [9,"Collagen Boost Serum","Firming / collagen-support serum","serum"],
+        [10,"Pore Refine Serum","Pore-refining serum","serum"],
+        [11,"Oil Balance Serum","Sebum-control serum","serum"],
+        [12,"Night Renewal Serum","Night-renewal serum","serum"],
+        [13,"Blue Light Defense Serum","Environmental-defense serum","serum"],
+        [14,"Acne Repair Serum","Blemish / acne treatment serum","serum"],
+        [15,"Glow Amplifier Serum","Radiance booster serum","serum"],
+        [16,"Peptide Restore Serum","Peptide serum","serum"],
+        [17,"Glass Skin Serum","Hydration / radiance serum","serum"],
+        [18,"Barrier Reset Serum","Barrier-support serum","serum"],
+        [19,"Dermalock Barrier Cream","Barrier-repair cream","cream"],
+        [20,"Ancient Repair Night Cream","Night-repair cream","cream"],
+        [21,"Saffron Glow Cream","Radiance cream","cream"],
+        [22,"Ultra Hydration Cream","Deep-hydration cream","cream"],
+        [23,"Brightening Day Cream","Brightening day cream","cream"],
+        [24,"Matte Control Cream","Oil-control cream","cream"],
+        [25,"Anti-Age Lift Cream","Firming / anti-ageing cream","cream"],
+        [26,"Saffron Antioxidant Serum","Antioxidant serum","serum"],
+        [27,"Firming Sculpt Cream","Firming cream","cream"],
+        [28,"Under Eye Cream","Eye cream","cream"],
+        [29,"Overnight Repair Cream","Overnight repair cream","cream"],
+        [30,"Skin Calm Cream","Calming / sensitive-skin cream","cream"],
+        [31,"Oil-Free Gel Cream","Oil-free gel cream","cream"],
+        [32,"Skin Repair Balm","Repair balm","balm"],
+        [33,"Radiance Boost Cream","Radiance cream","cream"],
+        [34,"Texture Smooth Cream","Texture-smoothing cream","cream"],
+        [35,"Youth Lock Cream","Anti-ageing cream","cream"],
+        [36,"Saffron Gentle Cleanser","Gentle facial cleanser","cleanser"],
+        [37,"Deep Detox Face Wash","Detox facial wash","cleanser"],
+        [38,"Oil Control Cleanser","Oil-control cleanser","cleanser"],
+        [39,"Hydrating Clean Gel","Hydrating gel cleanser","cleanser"],
+        [40,"Brightening Foam Cleanser","Brightening foam cleanser","cleanser"],
+        [41,"Neem Purify Wash","Purifying botanical wash","cleanser"],
+        [42,"Cream Cleanser","Cream cleanser","cleanser"],
+        [43,"Gel Cleanser","Gel cleanser","cleanser"],
+        [44,"Exfoliating Cleanser","Exfoliating cleanser","cleanser"],
+        [45,"Sensitive Skin Cleanser","Sensitive-skin cleanser","cleanser"],
+        [46,"Anti-Acne Face Wash","Anti-acne face wash","cleanser"],
+        [47,"Daily Glow Cleanser","Daily glow cleanser","cleanser"],
+        [48,"Saffron Glow Toner","Radiance toner","toner"],
+        [49,"Hydration Essence","Hydrating essence","toner"],
+        [50,"Skin Reset Mist","Facial mist","mist"],
+        [51,"Barrier Boost Essence","Barrier-support essence","toner"],
+        [52,"Brightening Toner","Brightening toner","toner"],
+        [53,"Anti-Acne Toner","Anti-acne toner","toner"],
+        [54,"Herbal Mist","Botanical mist","mist"],
+        [55,"Cooling Mist","Cooling facial mist","mist"],
+        [56,"Glass Skin Essence","Glass-skin essence","toner"],
+        [57,"Saffron Glow Mask","Radiance mask","mask"],
+        [58,"Clay Detox Mask","Clay detox mask","mask"],
+        [59,"Hydration Mask","Hydration mask","mask"],
+        [60,"Overnight Repair Mask","Overnight repair mask","mask"],
+        [61,"Peel-Off Glow Mask","Peel-off mask","mask"],
+        [62,"Sheet Mask Radiance","Sheet mask","mask"],
+        [63,"Under Eye Mask","Eye mask","mask"],
+        [64,"Brightening Pack","Brightening face pack","mask"],
+        [65,"Acne Control Mask","Acne-control mask","mask"],
+        [66,"Skin Tightening Mask","Firming mask","mask"],
+        [67,"Saffron Radiance Oil","Facial oil","oil"],
+        [68,"Youth Elixir Oil","Anti-ageing facial oil","oil"],
+        [69,"Night Repair Oil","Night-repair oil","oil"],
+        [70,"Glow Booster Oil","Radiance facial oil","oil"],
+        [71,"Herbal Skin Oil","Botanical facial oil","oil"],
+        [72,"Anti-Age Elixir","Anti-ageing treatment elixir","treatment"],
+        [73,"Barrier Strength Oil","Barrier-support oil","oil"],
+        [74,"Brightening Oil","Brightening facial oil","oil"],
+        [75,"Under Eye Oil","Eye-contour oil","oil"],
+        [76,"DERMALOCK™ Barrier Repair Cream","Hero barrier-repair cream / biomimetic lipid system","cream"],
+        [77,"Saffron Radiance Body Wash","Radiance body cleanser","wash"],
+        [78,"HydraSilk Moisturising Body Wash","Hydrating / moisturising body cleanser","wash"],
+        [79,"Gentle Sensitive Skin Body Wash","Sensitive-skin body cleanser","wash"],
+        [80,"Deep Detox Body Wash","Detoxifying / purifying body cleanser","wash"],
+        [81,"Exfoliating Body Wash","Exfoliating body cleanser","wash"],
+        [82,"AHA Renewal Body Wash","AHA-based body exfoliating cleanser","wash"],
+        [83,"Body Polishing Scrub","Physical body exfoliant / polishing scrub","scrub"],
+        [84,"Kesar Glow Body Scrub","Botanical radiance body scrub","scrub"],
+        [85,"Coffee Saffron Body Scrub","Coffee-based exfoliating body scrub","scrub"],
+        [86,"Ultra Hydration Body Lotion","Daily hydrating body lotion","lotion"],
+        [87,"Barrier Repair Body Lotion","Barrier-support body moisturiser","lotion"],
+        [88,"Saffron Firming Body Cream","Firming / nourishing body cream","cream"],
+        [89,"Body Butter","Rich emollient body butter","cream"],
+        [90,"Body Repair Balm","Intensive body repair balm","balm"],
+        [91,"Saffron Body Oil","Nourishing / radiance body oil","oil"],
+        [92,"Dry Body Oil","Lightweight fast-absorbing body oil","oil"],
+        [93,"Firming Body Oil","Firming / conditioning body oil","oil"],
+        [94,"Hand & Body Cream","Hand and body moisturising cream","cream"],
+        [95,"Liquid Hand Wash","Hand cleansing liquid wash","wash"],
+        [96,"Foaming Hand Wash","Foaming hand cleanser","wash"],
+        [97,"Alcohol Hand Sanitiser","Alcohol-based hand sanitiser / hand rub","wash"],
+        [98,"Moisturising Hand Sanitising Gel","Sanitising gel con moisturising skin-care base","gel"],
+        [99,"Saffron Bathing Soap Bar","Botanical bathing soap bar","bar"],
+        [100,"Moisturising Syndet Cleansing Bar","Soap-free moisturising syndet cleansing bar","bar"],
+        [101,"Saffron Hair Strengthening Oil","Strengthening hair/scalp oil","oil"],
+        [102,"Lush Nourish Shampoo","Nourishing shampoo","shampoo"],
+        [103,"Deep Repair Shampoo","Repair shampoo","shampoo"],
+        [104,"Anti-Hairfall Shampoo","Anti-hairfall shampoo","shampoo"],
+        [105,"Scalp Detox Shampoo","Scalp detox shampoo","shampoo"],
+        [106,"Anti-Dandruff Shampoo","Anti-dandruff shampoo","shampoo"],
+        [107,"Hair Growth / Scalp Growth Serum","Scalp-growth treatment serum","serum"],
+        [108,"Hair Nourishing / Repair Cream","Hair repair/nourishing cream","cream"],
+        [109,"Hair Setting Cream","Hair styling cream","cream"],
+        [110,"Hair Repair Treatment","Hair repair treatment","treatment"],
+        [111,"Hair Mask","Deep-conditioning hair mask","mask"],
+        [112,"Hair & Scalp Oil","Hair & scalp oil","oil"],
+        [113,"Hair / Scalp Serum","Hair/scalp treatment serum","serum"],
+        [114,"Leave-In Hair Treatment","Leave-in hair treatment","treatment"],
+        [115,"Hair Tonic","Scalp/hair tonic","toner"],
+        [116,"Professional Hair Concentrate","Professional hair concentrate","treatment"],
+        [117,"Scalp & Hair Repair Treatment","Scalp & hair repair treatment","treatment"],
+        [118,"Complete Hair Repair Elixir","Complete hair-repair elixir","treatment"],
+        [119,"Saffron Skin Tint","Tinted complexion base","foundation"],
+        [120,"Radiance BB Cream","Tinted moisturising complexion cream","cream"],
+        [121,"Hydrating CC Cream","Colour-correcting complexion cream","cream"],
+        [122,"High Coverage Foundation","High-coverage liquid foundation","foundation"],
+        [123,"Lightweight Serum Foundation","Serum-based complexion foundation","foundation"],
+        [124,"Matte Foundation","Oil-control matte foundation","foundation"],
+        [125,"Dewy Foundation","Dewy finish liquid foundation","foundation"],
+        [126,"Concealer","Cream/liquid concealer","concealer"],
+        [127,"Correcting Concealer Palette","Multi-shade colour correction palette","palette"],
+        [128,"Loose Setting Powder","Loose setting face powder","powder"],
+        [129,"Pressed Setting Powder","Pressed setting powder","powder"],
+        [130,"Translucent Finishing Powder","Translucent finishing powder","powder"],
+        [131,"Compact Face Powder","Pressed complexion powder","powder"],
+        [132,"Cream Blush","Cream cheek colour","blush"],
+        [133,"Powder Blush","Powder cheek colour","blush"],
+        [134,"Liquid Blush","Liquid cheek tint","blush"],
+        [135,"Cream Bronzer","Cream bronzing colour","bronzer"],
+        [136,"Powder Bronzer","Powder bronzer","bronzer"],
+        [137,"Highlighter Stick","Cream contour/highlight stick","highlighter"],
+        [138,"Liquid Highlighter","Liquid illuminating makeup","highlighter"],
+        [139,"Pressed Highlighter","Pressed illuminating powder","highlighter"],
+        [140,"Contour Stick","Cream contour stick","contour"],
+        [141,"Contour Powder","Powder contour","contour"],
+        [142,"Eyeshadow Palette – Nude","Nude multi-colour eyeshadow palette","palette"],
+        [143,"Eyeshadow Palette – Saffron","Saffron-toned multi-colour eyeshadow palette","palette"],
+        [144,"Single Eyeshadow","Single powder eyeshadow","shadow"],
+        [145,"Liquid Eyeliner","Liquid eye liner","liner"],
+        [146,"Gel Eyeliner","Gel eye liner","liner"],
+        [147,"Kajal","Kohl eye pencil","kajal"],
+        [148,"Volumising Mascara","Volumising mascara","mascara"],
+        [149,"Lengthening Mascara","Lengthening mascara","mascara"],
+        [150,"Brow Pencil","Brow defining pencil","pencil"],
+        [151,"Brow Gel","Clear/tinted brow gel","gel"],
+        [152,"Lip Liner","Lip defining pencil","pencil"],
+        [153,"Hydrating Lip Balm","Moisturising lip balm","balm"],
+        [154,"Matte Lipstick","Matte bullet lipstick","lipstick"],
+        [155,"Satin Lipstick","Satin finish lipstick","lipstick"],
+        [156,"Liquid Lip Colour","Liquid lip colour","lipstick"],
+        [157,"Lip Gloss","Glossy lip finish","gloss"],
+        [158,"Lip Plumper","Lip-plumping gloss","gloss"],
+        [159,"Fluoride Daily Toothpaste","Fluoride toothpaste","toothpaste"],
+        [160,"Sensitive Care Toothpaste","Desensitising toothpaste","toothpaste"],
+        [161,"Whitening Toothpaste","Whitening toothpaste","toothpaste"],
+        [162,"Herbal Gum Care Toothpaste","Botanical gum-care toothpaste","toothpaste"],
+        [163,"Kids Fluoride Toothpaste","Paediatric fluoride toothpaste","toothpaste"],
+        [164,"Enamel Protection Toothpaste","Enamel-support toothpaste","toothpaste"],
+        [165,"Anti-Cavity Toothpaste","Anti-caries toothpaste","toothpaste"],
+        [166,"Complete Gum Care Toothpaste","Gingival-care toothpaste","toothpaste"],
+        [167,"Alcohol-Free Mouthwash","Alcohol-free oral rinse","rinse"],
+        [168,"Fresh Breath Mouthwash","Breath-freshening oral rinse","rinse"],
+        [169,"Sensitive Mouthwash","Sensitive-mouth oral rinse","rinse"],
+        [170,"Whitening Mouthwash","Whitening oral rinse","rinse"],
+        [171,"Kids Mouthwash","Paediatric mouth rinse","rinse"],
+        [172,"Toothbrush – Soft","Soft-bristle manual toothbrush","brush"],
+        [173,"Toothbrush – Ultra Soft","Ultra-soft manual toothbrush","brush"],
+        [174,"Kids Toothbrush","Paediatric toothbrush","brush"],
+        [175,"Charcoal Toothbrush","Charcoal-infused toothbrush","brush"],
+        [176,"Tongue Cleaner","Tongue-cleaning scraper","tool"],
+        [177,"Dental Floss","Dental floss","floss"],
+        [178,"Interdental Brushes","Interdental cleaning brush","brush"],
+        [179,"Denture Cleansing Tablets","Denture cleanser tablets","tablet"],
+        [180,"Denture Care Kit","Complete denture-care kit","kit"],
+        [181,"Baby Gentle Shampoo","Mild baby shampoo","shampoo"],
+        [182,"Baby Hair & Body Wash","2-in-1 baby hair and body cleanser","wash"],
+        [183,"Baby Body Wash","Gentle baby body cleanser","wash"],
+        [184,"Baby Cleansing Bar","Mild baby soap bar","bar"],
+        [185,"Baby Syndet Bar","Soap-free baby syndet bar","bar"],
+        [186,"Baby Lotion","Baby moisturising lotion","lotion"],
+        [187,"Baby Moisturising Cream","Baby emollient cream","cream"],
+        [188,"Baby Massage Oil","Baby massage oil","oil"],
+        [189,"Baby Face Cream","Gentle facial moisturiser","cream"],
+        [190,"Baby Diaper Rash Cream","Diaper-area protective cream","cream"],
+        [191,"Baby Barrier Balm","Barrier-protective balm","balm"],
+        [192,"Baby Sunscreen","Mineral pediatric sun protection milk","sunscreen"]
+      ];
+
+      const PRODUCTS_193_TO_429 = [
+        [193,"Baby Pure Cornstarch Powder","Talc-free botanical diaper powder","powder"],
+        [194,"Baby Teething Soothing Gel","Herbal clove and chamomile oral gel","gel"],
+        [195,"Baby Cold Relief Chest Rub","Eucalyptus and tulsi warming ointment","balm"],
+        [196,"Baby Soothing Bath Milk","Oat and almond nourishing bath elixir","wash"],
+        [197,"Baby Gentle Hair Oil","Lightweight coconut and bhringraj hair oil","oil"],
+        [198,"Baby Tangle-Free Mist","Gentle leave-in detangling spray","mist"],
+        [199,"Baby Eczema Calming Cream","Colloidal oat sensitive skin barrier cream","cream"],
+        [200,"Baby Pure Water Wipes","99% pure water biodegradable cotton wipes","wipes"],
+        [201,"Baby Cradle Cap Oil","Gentle scalp flake softening oil","oil"],
+        [202,"Baby Lavender Pillow Mist","Calming bedtime botanical nursery mist","mist"],
+        [203,"Baby Mosquito Repellent Roll-On","Citronella and lemongrass natural defense","oil"],
+        [204,"Baby Travel Care Kit","Essential 5-piece nursery travel collection","kit"],
+        [205,"Men Beard Growth & Conditioning Oil","Cedarwood and almond strengthening beard oil","oil"],
+        [206,"Men Precision Shave Gel","Aloe-infused clear glide shaving formula","gel"],
+        [207,"Men Calming After-Shave Balm","Alcohol-free witch hazel and menthol balm","balm"],
+        [208,"Men Activated Charcoal Face Wash","Deep pore detoxifying facial cleanser","cleanser"],
+        [209,"Men Mattifying Daily Face Lotion","Oil-control lightweight SPF moisturiser","lotion"],
+        [210,"Men Anti-Dandruff Scalp Tonic","Tea tree and piroctone olamine hair tonic","toner"],
+        [211,"Men Conditioning Beard Butter","Shea and sandalwood shaping beard butter","balm"],
+        [212,"Men Natural Deodorant Roll-On","Alum and vetiver 24h odor protection","rollon"],
+        [213,"Men Signature Cologne Mist","Jaipur woods and bergamot botanical fragrance","fragrance"],
+        [214,"Men Matte Styling Hair Clay","Volumising natural hold styling clay","cream"],
+        [215,"Femme Organic Cotton Day Pads","Chlorine-free breathable day sanitary napkins","pads"],
+        [216,"Femme Organic Cotton Night Pads","Extra-long leak-lock overnight pads","pads"],
+        [217,"Femme Ultra-Thin Panty Liners","Daily fresh organic cotton breathable liners","pads"],
+        [218,"Femme Medical-Grade Menstrual Cup S","Soft biocompatible silicone small cup","cup"],
+        [219,"Femme Medical-Grade Menstrual Cup M","Medium flow silicone menstrual collector","cup"],
+        [220,"Femme Medical-Grade Menstrual Cup L","High capacity ergonomic menstrual cup","cup"],
+        [221,"Femme Cramp Relief Roll-On","Nutmeg, ginger, and eucalyptus soothing blend","oil"],
+        [222,"Femme Period Comfort Herbal Tea","Ashoka, shatavari, and spearmint infusion","tea"],
+        [223,"Femme Herbal Heating Patch","Air-activated 8-hour pelvic warmth patch","patch"],
+        [224,"Femme Intimate Foam Wash","pH 3.8 lactic acid gynecological cleanser","wash"],
+        [225,"Femme Biodegradable Disposal Bags","Odor-proof oxo-biodegradable sanitary bags","kit"],
+        [226,"Femme Leakproof Period Brief (M)","Washable 4-layer absorbent cotton brief","apparel"],
+        [227,"Femme Leakproof Period Hipster (L)","Full-coverage leakproof daytime brief","apparel"],
+        [228,"Femme Nipple Soothing Butter","Pure medical-grade lanolin and calendula","balm"],
+        [229,"Femme Postpartum Recovery Mist","Witch hazel and cucumber perineal spray","mist"],
+        [230,"Femme Cycle Travel Pouch","Water-resistant discrete cotton amenity kit","kit"],
+        [231,"Intimate Water-Based Botanical Lube","Pure hyaluronic and aloe hydrating lubricant","lube"],
+        [232,"Intimate Aloe Vera Comfort Lube","Gentle hypoallergenic soothing lubricant","lube"],
+        [233,"Intimate Saffron Warming Lubricant","Sensory warming cinnamon and saffron formula","lube"],
+        [234,"Intimate Silicone Ultra Glide","Long-lasting waterproof medical silicone","lube"],
+        [235,"Intimate pH-Balanced Daily Wash","Prebiotic and tea tree gentle hygiene wash","wash"],
+        [236,"Intimate Calming Refresh Mist","Rose water and aloe soothing deodorant spray","mist"],
+        [237,"Intimate Post-Intimacy Restorative Gel","Centella and chamomile friction recovery gel","gel"],
+        [238,"Intimate Biodegradable Cleansing Wipes","Individual pocket-size pH-neutral wipes","wipes"],
+        [239,"Intimate Herbal Sensual Massage Oil","Jasmine, ylang ylang, and sweet almond oil","oil"],
+        [240,"Intimate Stimulating Arousal Gel","Peppermint and ginseng micro-circulation gel","gel"],
+        [241,"Intimate Delay Spray for Men","Mild lidocaine and clove desensitising spray","spray"],
+        [242,"Intimate Clitoral Stimulating Balm","Botanical warming and tingling balm","balm"],
+        [243,"Intimate Organic Barrier Balm","Chafing defense coconut and beeswax balm","balm"],
+        [244,"Intimate Precision Shave Oil","Ingrown hair preventing bikini line oil","oil"],
+        [245,"Intimate Post-Shave Soothing Elixir","Redness-reducing niacinamide bikini serum","serum"],
+        [246,"Intimate Latex Ultra-Thin Condoms","0.04mm lubricated natural rubber latex (10pk)","barrier"],
+        [247,"Intimate Ribbed & Dotted Condoms","Textured natural rubber latex (10pk)","barrier"],
+        [248,"Intimate Flavoured Natural Condoms","Subtle saffron vanilla flavoured latex (10pk)","barrier"],
+        [249,"Intimate Hygiene Device Cleaner","Antibacterial rinse-free sanitising mist","spray"],
+        [250,"Intimate Pelvic Floor Exercise Duo","Graduated weight medical silicone trainer","device"],
+        [251,"Intimate Deep Comfort Balm","Rich emollient botanical restorative cream","balm"],
+        [252,"Intimate Travel Duo Set","Pocket lube and intimate cleansing foam (50ml)","kit"],
+        [253,"Invisible Daily Fluid SPF 50+","Ultra-lightweight non-greasy broad spectrum fluid","sunscreen"],
+        [254,"Mineral Matte Sunscreen SPF 50+","100% Zinc oxide oil-control physical shield","sunscreen"],
+        [255,"Dewy Sun Glow Serum SPF 40","Niacinamide-infused luminous sun serum","sunscreen"],
+        [256,"Tinted Mineral Sun Shield SPF 50","Universal tint iron oxide blue light protection","sunscreen"],
+        [257,"Aqua Light Gel Sunscreen SPF 30","Refreshing water-break cooling sunscreen gel","sunscreen"],
+        [258,"Sun Defense Clear Stick SPF 50+","Water-resistant pocket reapplication stick","sunscreen"],
+        [259,"Cooling After-Sun Repair Gel","Aloe vera, mint, and tasmanian pepperberry gel","gel"],
+        [260,"Sun Protection Lip Shield SPF 30","Broad-spectrum nourishing shea butter lip balm","balm"],
+        [261,"Ultra Sports Water Barrier SPF 50+","80-minute sweat and water resistant emulsion","sunscreen"],
+        [262,"Kids Sensitive Sun Milk SPF 50","Tear-free hypoallergenic pediatric mineral milk","sunscreen"],
+        [263,"Clinical 10% Niacinamide + 1% Zinc","Concentrated sebum and blemish balancing serum","serum"],
+        [264,"Clinical 2% Salicylic Acid BHA Liquid","Pore-clearing chemical exfoliant toner","toner"],
+        [265,"Clinical 20% Vitamin C + Ferulic","Stabilised L-Ascorbic antioxidant complex","serum"],
+        [266,"Clinical 0.3% Pure Retinol Night Oil","Encapsulated cellular turnover night treatment","oil"],
+        [267,"Clinical Multi-Weight Hyaluronic 2%","Tri-molecular hydration plumping concentrate","serum"],
+        [268,"Clinical 5% Ceramide Biomimetic Complex","Intense barrier rebuilding barrier emulsion","cream"],
+        [269,"Clinical Azelaic Acid 10% Gel","Rosacea and dark spot clarifying treatment","cream"],
+        [270,"Clinical Tranexamic Acid 3% Corrector","Targeted stubborn melasma correcting elixir","serum"],
+        [271,"Clinical Copper Peptide 1% Concentrate","Collagen synthesis booster firming serum","serum"],
+        [272,"Clinical Mandelic Acid 10% Gentle Peel","Superficial AHA peel for sensitive skin","treatment"],
+        [273,"Clinical Centella Cica Intensive Balm","Post-procedure wound and redness rescue balm","balm"],
+        [274,"Clinical Scalp Redensyl & Peptide Drop","Follicle activation hair density treatment","serum"],
+        [275,"Herbal Vasaka Cough Syrup","Ayurvedic bronchial soothing honey elixir","syrup"],
+        [276,"Mulethi & Clove Throat Lozenges","Herbal throat soothing pastilles (24pk)","lozenge"],
+        [277,"Fast Relief Herbal Pain Balm","Wintergreen and eucalyptus analgesic balm","balm"],
+        [278,"Eucalyptus Steam Inhalation Drops","Concentrated decongestant essential oil blend","oil"],
+        [279,"Digestion Carminative Churna Sachet","Hing, ajwain, and trikatu digestive powder","powder"],
+        [280,"Effervescent Acidity Relief Powder","Fast-acting lemon and rock salt antacid","powder"],
+        [281,"Hypertonic Saline Nasal Mist","Preservative-free ocean mineral nasal flush","spray"],
+        [282,"Antiseptic Botanical Healing Ointment","Neem, turmeric, and zinc wound barrier","ointment"],
+        [283,"Fast Acting Muscle Reliever Gel","Cooling arnica and menthol sports rub","gel"],
+        [284,"Burn Soothing Hydrogel","Silver nitrate and aloe immediate burn balm","gel"],
+        [285,"Ayurvedic Mahanarayan Joint Liniment","Traditional joint mobility warm medicated oil","oil"],
+        [286,"Soothing Calamine Zinc Emulsion","Anti-itch rash and mosquito bite lotion","lotion"],
+        [287,"Electrolyte Oral Rehydration Salts (ORS)","WHO formula glucose electrolyte blend (10pk)","powder"],
+        [288,"Activated Coconut Charcoal Capsules","Adsorbent intestinal gas and detox capsules","capsule"],
+        [289,"Medicated Waterproof Bandages","Breathable antiseptic wound plaster assortment","bandage"],
+        [290,"Cold & Flu Herbal Kadha Decoction","Tulsi, ginger, and black pepper instant brew","tea"],
+        [291,"Ginger Motion Sickness Lozenges","Natural anti-nausea chewable pastilles","lozenge"],
+        [292,"Allergy Barrier Nasal Powder Spray","Natural cellulose allergen blocking spray","spray"],
+        [293,"Triphala Sterile Eye Wash","Purified isotonic Ayurvedic ocular flush","rinse"],
+        [294,"Antifungal Clotrimazole Dusting Powder","Sweat absorbing topical antifungal talc-free","powder"],
+        [295,"Arnica Bruise Dispersal Gel","Trauma recovery capillary support herbal gel","gel"],
+        [296,"Psoriasis Support Coal Tar Balm","Descaling soothing scalp and skin ointment","ointment"],
+        [297,"Intense Eczema Colloidal Oat Balm","Steroid-free micro-biome barrier salve","balm"],
+        [298,"Heparin Sodium Bruise Gel","Topical anti-inflammatory blood spot gel","gel"],
+        [299,"Deep Crack Heel Repair Cream","Urea 20% and kokum butter foot ointment","cream"],
+        [300,"Cold Sore Lysine Barrier Cream","Lemon balm and zinc antiviral lip ointment","cream"],
+        [301,"Headache Tension Relief Roll-On","Peppermint and lavender cooling forehead roll-on","oil"],
+        [302,"Menstrual Herbal Comfort Capsules","Shatavari and ashoka antispasmodic tablets","tablet"],
+        [303,"Herbal Sleep Valerian Elixir","Melatonin-free calming botanical liquid drops","syrup"],
+        [304,"Infant Gas Carminative Drops","Dill seed and fennel baby colic relief","drops"],
+        [305,"Triphala Digestive Constipation Tablet","Mild non-habit forming colon cleanse tablets","tablet"],
+        [306,"Immunity Shield Giloy & Tulsi Juice","Pure cold-extracted adaptogenic wellness tonic","syrup"],
+        [307,"Wound Cleansing Antiseptic Wash","Gentle non-stinging povidone-iodine free wash","wash"],
+        [308,"Compression Sprain Ice Gel","Cryo-therapeutic swelling reduction rub","gel"],
+        [309,"Salicylic Corn & Callus Solution","Targeted hyperkeratosis removal liquid with brush","solution"],
+        [310,"Hemorrhoid Soothing Witch Hazel Cream","Vasoconstrictive calming anorectal ointment","cream"],
+        [311,"Magnesium Epsom Muscle Soak Salts","Pure eucalyptus relaxing bath recovery salts","salts"],
+        [312,"Herbal Mouth Ulcer Soothing Gel","Licorice and honey analgesic mucosal gel","gel"],
+        [313,"Antiseptic Povidone Gargle","0.5% gargle for throat infections","rinse"],
+        [314,"Heat Exhaustion Rehydration Tonic","Instant potassium and sodium restoring shot","syrup"],
+        [315,"Herbal Fever Soothing Drink Blend","Chirata and giloy cooling herbal infusion","tea"],
+        [316,"Comprehensive Travel First Aid Kit","Sterile pads, wipes, liniments and wraps","kit"],
+        [317,"Prickly Heat Cooling Powder","Neem and camphor sweat relief absorbent","powder"],
+        [318,"Wart Removal Medicated Patch","Direct salicylic acid continuous release discs","patch"],
+        [319,"Emergency Hydrogel Burn Dressing","Sterile cooling water-gel sterile pad","bandage"],
+        [320,"Saffron Gold KSM-66 Ashwagandha","Root extract 500mg with pure saffron threads","capsule"],
+        [321,"Pure Marine Collagen Peptides","Type I & III hydrolyzed bioactive peptides","powder"],
+        [322,"Complete Daily Wholefood Multivitamin","Fermented fruit and vegetable micronutrients","capsule"],
+        [323,"Plant Protein Blend — Kashmiri Vanilla","Pea, brown rice, and sacha inchi 25g protein","powder"],
+        [324,"Plant Protein Blend — Single Estate Cocoa","Cold-pressed cacao plant protein blend","powder"],
+        [325,"Vegan Omega-3 Algal Oil DHA+EPA","Marine algae sustainably cultivated capsules","capsule"],
+        [326,"Curcumin 95% + BioPerine","Standardized turmeric extract inflammation support","capsule"],
+        [327,"Triphala Organic Digestive Cleanse","Amla, haritaki, and bibhitaki gut tablets","tablet"],
+        [328,"Brahmi & Shankhpushpi Focus Complex","Ayurvedic nootropic memory and clarity blend","capsule"],
+        [329,"Purified Himalayan Shilajit Gold Resin","Grade A fulvic acid 80% natural resin","resin"],
+        [330,"Organic Spirulina & Chlorella Tablets","Alkalising sun-grown blue-green microalgae","tablet"],
+        [331,"Vitamin D3 + K2 (MK-7) Plant Drops","Lichen-sourced cholecalciferol in MCT oil","drops"],
+        [332,"Magnesium Bisglycinate Chelate","High absorption muscle and nerve support 400mg","capsule"],
+        [333,"Zinc + Black Elderberry Gummies","Immunity defense pectin chewables for adults","gummy"],
+        [334,"Probiotic 50 Billion CFU + Prebiotics","16 targeted strains delayed-release capsules","capsule"],
+        [335,"Biotin 10,000 mcg Hair & Nail Gummies","Sesbania leaf extract with zinc and bamboo silica","gummy"],
+        [336,"Milk Thistle Silymarin 80% Liver Complex","Dandelion root and artichoke detox blend","capsule"],
+        [337,"Organic Moringa Leaf Powder","Sun-dried superfood raw green nutrient powder","powder"],
+        [338,"Amla Vitamin C 1000mg Natural Extract","Standardized Emblica officinalis antioxidant tablets","tablet"],
+        [339,"Shatavari Hormone Balance for Women","Wild harvested asparagus racemosus fertility tonic","capsule"],
+        [340,"CoQ10 200mg Ubiquinol Bio-Energizer","Mitochondrial cardiac energy and longevity","capsule"],
+        [341,"Golden Latte Golden Milk Blend","Organic Lakadong turmeric, cinnamon, and black pepper","powder"],
+        [342,"Ashwagandha Calm Sleep Moon Milk","Nutmeg and chamomile adaptogenic night brew","powder"],
+        [343,"Organic Apple Cider Vinegar Gummies","Raw unfiltered ACV with the Mother chewables","gummy"],
+        [344,"Gentle Iron Bisglycinate + Folate","Non-constipating blood builder with vitamin C","capsule"],
+        [345,"Electrolyte Hydration Sachet — Citrus","Balanced cellular osmolarity minerals powder","powder"],
+        [346,"Green Tea EGCG Antioxidant Extract","Decaffeinated metabolic support polyphenol caps","capsule"],
+        [347,"Glucosamine Chondroitin + Boswellia","Joint mobility and cartilage support","capsule"],
+        [348,"Trans-Resveratrol 500mg Longevity","Japanese knotweed cellular senescence defense","capsule"],
+        [349,"Non-Melatonin Herbal Sleep Matrix","Tagara, passionflower, and L-theanine blend","capsule"],
+        [350,"Daily Organic Acacia Prebiotic Fiber","Soluble fermentable fiber for microbiome balance","powder"],
+        [351,"Peruvian Maca Root 1000mg Stamina","Gelatinised black and red maca energy complex","capsule"],
+        [352,"Calcium Citrate Malate + Boron & D3","Bone density mineral matrix with magnesium","tablet"],
+        [353,"Kids Organic Multivitamin Chewables","Whole food berry-flavored pectin vitamins","gummy"],
+        [354,"Senior Vitality Guggulu & Shilajit","Rejuvenating rasayana for active aging","capsule"],
+        [355,"Organic Wheatgrass Juice Powder","Cold-press dehydrated raw chlorophyll powder","powder"],
+        [356,"Liquid Sodium Copper Chlorophyllin","Internal deodorising mint flavored detox drops","drops"],
+        [357,"L-Theanine 200mg Calm Focus","Green tea amino acid alpha-wave mental calmness","capsule"],
+        [358,"Berberine HCl 500mg Glucose Optimizer","Indian barberry metabolic balance support","capsule"],
+        [359,"Quercetin Dihydrate 500mg + Bromelain","Bioflavonoid respiratory and sinus comfort","capsule"],
+        [360,"Setria® L-Glutathione Reduced 500mg","Master cellular antioxidant and radiance caps","capsule"],
+        [361,"Active Methyl B-Complex","Methylcobalamin B12 and methylfolate energy","capsule"],
+        [362,"Eye Health Lutein & Zeaxanthin FloraGLO","Marigold macular carotenoid blue light shield","capsule"],
+        [363,"Thyroid Support Ashwagandha & Iodine","Kelp extract and selenium metabolic balance","capsule"],
+        [364,"Fermented Plant BCAA 2:1:1 Powder","Instantized vegan branched-chain amino acids","powder"],
+        [365,"Sonic Facial Cleansing Device","Silicone thermal vibration pore purifier","device"],
+        [366,"Microcurrent Facial Sculptor Pro","Dual globe microcurrent lifting and contouring","device"],
+        [367,"Medical Grade LED Light Therapy Mask","Red, near-infrared, and blue light silicon mask","device"],
+        [368,"Ultrasonic Skin Scrubber Spatula","28kHz ultrasonic blackhead extraction tool","device"],
+        [369,"Smart Cordless Water Flosser","OLED display pulse periodontal irrigator","device"],
+        [370,"Sonic Electric Toothbrush Pro","40,000 vibrations/min magnetic levitation motor","device"],
+        [371,"High-Precision Smart Body Scale","16-biometric dual-frequency BIA impedance scale","device"],
+        [372,"Infrared Contactless Forehead Thermometer","German sensor 1-second clinical thermometer","device"],
+        [373,"Smart Fingertip Pulse Oximeter","OLED SpO2 and pulse rate clinical sensor","device"],
+        [374,"Cold Plasma Blemish Clearing Wand","Ozone cold plasma spot sterilizing device","device"],
+        [375,"Cryo Stainless Steel Facial Globes","Sub-zero fluid filled depuffing facial contourers","device"],
+        [376,"Smart Heated Eye Relief Massager","Air compression, heat, and vibration eye mask","device"],
+        [377,"Red Light Hair Growth Laser Brush","650nm low-level laser follicle stimulation","device"],
+        [378,"Mini Percussion Deep Tissue Massage Gun","Brushless motor 4-speed muscle percussion tool","device"],
+        [379,"Indoor Smart Air Quality PM2.5 Monitor","Laser particle and TVOC real-time tracker","device"],
+        [380,"Nano Ionic Facial Steamer","Ultrafine warm mist pore hydration system","device"],
+        [381,"Smart UV-C Steriliser Box","360-degree germicidal sanitation case","device"],
+        [382,"Smart UV Self-Cleaning Water Bottle","UV-C cap with hydration reminder display","device"],
+        [383,"Digital Upper Arm Blood Pressure Monitor","Bluetooth auto-inflating clinical cuff","device"],
+        [384,"Personal Single-Lead ECG Monitor","Handheld 30-second arrhythmia detection device","device"],
+        [385,"Cervical Spine Neck Traction Pillow","Ergonomic acupressure alignment stretcher","device"],
+        [386,"Vibrating Rose Quartz Face Roller","Sonic lymphatic drainage beauty roller","device"],
+        [387,"High Frequency Neon & Argon Wand Set","Glass electrode anti-blemish and scalp kit","device"],
+        [388,"Wireless Dual-Channel TENS Unit","Drug-free nerve stimulation pain relief unit","device"],
+        [389,"Smart Sensor Posture Corrector","Vibration feedback real-time spinal reminder","device"],
+        [390,"Electric Heated Gua Sha Sculptor","Bianshi stone with heat and vibration tech","device"],
+        [391,"White Noise & Sunrise Sleep Lamp","Sound therapy with circadian light transitions","device"],
+        [392,"Smart Digital Body Measuring Tape","Bluetooth circumference tracking for wellness","device"],
+        [393,"Painless Home IPL Laser Hair Remover","Sapphire ice-cooling 999,999 flashes device","device"],
+        [394,"Ultrasonic Ceramic Aroma Diffuser","Waterless stone finish aromatherapy diffuser","device"],
+        [395,"Portable Ultrasonic Mesh Nebulizer","Pocket-sized silent respiratory mist inhaler","device"],
+        [396,"Targeted Blue Light Phototherapy Pen","415nm targeted acne bacteria clearing light","device"],
+        [397,"Smart Biometric Gait Insole Pair","Pressure distribution sensor athletic insoles","device"],
+        [398,"Digital Skin Moisture & Oil Meter","Bio-impedance instant dermis hydration reader","device"],
+        [399,"Acupressure Heated Foot Massager","Deep kneading shiatsu with air compression","device"],
+        [400,"Far Infrared Lumbar Heating Pad","Natural jade stones soothing lower back wrap","device"],
+        [401,"Smart Snore Stopper Chin Strap Band","EMS muscle pulse anti-snoring intervention","device"],
+        [402,"Continuous Blood Glucose Monitor Reader","Non-invasive optical biosensing test console","device"],
+        [403,"Foldable Handheld UV-C Sanitiser Wand","Travel surface disinfecting ultraviolet wand","device"],
+        [404,"HealthTech Protective Hard Shell Case","Custom molded impact resistant tech organizer","kit"],
+        [405,"Pure 22-Momme Mulberry Silk Pillowcase","Grade 6A hypoallergenic friction-free silk","apparel"],
+        [406,"Mulberry Silk Contoured Sleep Mask","Light blocking breathable pure silk eye mask","apparel"],
+        [407,"100% Organic Bamboo Bath Towel (Plush)","600 GSM antibacterial hypoallergenic towel","linen"],
+        [408,"Organic Waffle Weave Kimono Bathrobe","Breathable zero-twist long staple cotton robe","apparel"],
+        [409,"Ayurvedic Pure Kansa Wand Face Sculptor","Bronze bell-metal and teakwood massage tool","tool"],
+        [410,"Handcrafted Rose Quartz Gua Sha Stone","Natural cooling facial lymphatic stone","tool"],
+        [411,"Sandalwood Wide-Tooth Detangler Comb","Aromatic natural wood static-free comb","tool"],
+        [412,"Neem Wood Pocket Comb","Antibacterial medicinal neem beard and hair comb","tool"],
+        [413,"Hand-Hammered Pure Copper Water Carafe 1L","Ayurvedic Tamra Jal overnight water vessel","vessel"],
+        [414,"Handcrafted Copper Tumbler Pair","Solid copper natural antimicrobial drinking cups","vessel"],
+        [415,"Pure Copper Ayurvedic Tongue Scraper","Ergonomic heavy-gauge oral detox cleaner","tool"],
+        [416,"Saffron & Amber Soy Wax Luxury Candle","Hand-poured 60-hour clean burning candle","candle"],
+        [417,"Temple Sandalwood & Oud Soy Candle","Natural cotton wick meditative home fragrance","candle"],
+        [418,"Jaipur Woods Botanical Room Mist","Steam-distilled deodar and rose ambient scent","mist"],
+        [419,"Handwoven Organic Jute & Rubber Yoga Mat","Non-slip eco-friendly alignment exercise mat","mat"],
+        [420,"Sustainably Harvested Cork Yoga Block Duo","High-density supportive natural cork blocks","tool"],
+        [421,"Organic Cotton Webbing Yoga Strap","D-ring brass buckle posture alignment strap","tool"],
+        [422,"Handmade Ceramic Dhoop Incense Burner","Minimalist glazed clay cone incense holder","vessel"],
+        [423,"Raw Linen Travel Cosmetic Pouch","Zippered water-resistant botanical toiletry bag","bag"],
+        [424,"Structured Vegan Leather Vanity Case","Gold hardware compartments luxury travel case","bag"],
+        [425,"Eco Bamboo Toothbrush Travel Case","Ventilated natural bamboo cylindrical holder","case"],
+        [426,"Reusable Organic Cotton Makeup Rounds","12 washable velvet pads with mesh laundry pouch","linen"],
+        [427,"Pure Mulberry Silk Hair Scrunchie Trio","Zero-breakage gentle hair ties collection","apparel"],
+        [428,"Handcrafted Brass Diya Oil Lantern","Traditional cast brass meditation altar vessel","vessel"],
+        [429,"Pure Cashmere Hand-Spun Meditation Shawl","Himalayan ultra-soft warming wellness wrap","apparel"]
+      ];
+
+      const ALL_PRODUCTS = [];
+      const combined = [...RAW_VERBATIM_1_TO_192, ...PRODUCTS_193_TO_429];
+
+      combined.forEach(item => {
+        const skuNum = item[0];
+        const skuStr = String(skuNum).padStart(3, "0");
+        const name = item[1];
+        const formulation = item[2];
+        const type = item[3];
+
+        let div = DIVISIONS.find(d => {
+          const parts = d.range.split("–");
+          return skuNum >= parseInt(parts[0], 10) && skuNum <= parseInt(parts[1], 10);
+        }) || DIVISIONS[0];
+
+        let priceINR = 0;
+        if (div.status === "live") {
+          const spread = div.maxPrice - div.minPrice;
+          const hashVal = (skuNum * 37 + name.length * 19) % 100;
+          const rawPrice = div.minPrice + Math.floor((spread * (hashVal / 100)));
+          priceINR = Math.round(rawPrice / 50) * 50 - 1;
+          if (priceINR < div.minPrice) priceINR = div.minPrice;
+        }
+
+        ALL_PRODUCTS.push({
+          sku: skuStr,
+          skuNum: skuNum,
+          name: name,
+          formulation: formulation,
+          divisionId: div.id,
+          divisionName: div.name,
+          type: type,
+          status: div.status,
+          priceINR: priceINR,
+          tone: div.tone
+        });
+      });
+
+      /* ==========================================================================
+         4. STATE & STORAGE (STORE)
+         ========================================================================== */
+      const STATE = {
+        lang: localStorage.getItem("kyorp_lang") || "en",
+        curr: localStorage.getItem("kyorp_curr") || "INR",
+        cart: JSON.parse(localStorage.getItem("kyorp_cart") || "[]"),
+        wishlist: JSON.parse(localStorage.getItem("kyorp_wish") || "[]"),
+        currentView: "home",
+        categoryParams: { divId: "skin-science", typeFilter: "all", sort: "sku", page: 1 },
+        currentSku: "001"
+      };
+
+      function saveStore() {
+        localStorage.setItem("kyorp_lang", STATE.lang);
+        localStorage.setItem("kyorp_curr", STATE.curr);
+        localStorage.setItem("kyorp_cart", JSON.stringify(STATE.cart));
+        localStorage.setItem("kyorp_wish", JSON.stringify(STATE.wishlist));
+        updateCartCount();
+        updateWishCount();
+      }
+
+      function updateCartCount() {
+        const count = STATE.cart.reduce((sum, item) => sum + item.qty, 0);
+        const badge = document.getElementById("cart-counter");
+        if (badge) badge.textContent = count;
+      }
+
+      function updateWishCount() {
+        const count = STATE.wishlist.length;
+        const badge = document.getElementById("wish-counter");
+        if (badge) badge.textContent = count;
+      }
+
+      /* ==========================================================================
+         5. CURRENCY FORMATTER
+         ========================================================================== */
+      function formatPrice(amountINR) {
+        if (!amountINR || amountINR <= 0) return "In Development";
+        const c = CONFIG.currencies[STATE.curr];
+        const converted = amountINR * c.rateFromINR;
+
+        if (STATE.curr === "INR") {
+          return new Intl.NumberFormat("en-IN", {
+            style: "currency",
+            currency: "INR",
+            maximumFractionDigits: 0
+          }).format(converted);
+        } else {
+          return new Intl.NumberFormat(c.locale, {
+            style: "currency",
+            currency: STATE.curr,
+            maximumFractionDigits: 2
+          }).format(converted);
+        }
+      }
+
+      /* ==========================================================================
+         6. INLINE SVG PRODUCT ARTWORK GENERATOR
+         ========================================================================== */
+      function renderProductSVG(type, tone, labelText) {
+        const safeText = escapeHTML((labelText || "KYORP").substring(0, 16).toUpperCase());
+        return `
+          <svg width="100%" height="100%" viewBox="0 0 200 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="200" height="240" fill="#F4EFE6" opacity="0.6"/>
+            <ellipse cx="100" cy="215" rx="46" ry="7" fill="rgba(18,16,14,0.08)"/>
+            <g transform="translate(100, 120)">
+              <rect x="-14" y="-78" width="28" height="22" rx="2" fill="${tone}" opacity="0.9"/>
+              <rect x="-8" y="-90" width="16" height="14" rx="2" fill="#B98A3E"/>
+              <rect x="-2" y="-102" width="4" height="12" fill="#B98A3E"/>
+              <path d="M-36 -54 C-36 -56, -20 -58, 0 -58 C20 -58, 36 -56, 36 -54 L38 72 C38 78, 32 82, 0 82 C-32 82, -38 78, -38 72 Z" fill="${tone}"/>
+              <path d="M-32 -48 L-30 68" stroke="rgba(246,241,231,0.25)" stroke-width="2.5" stroke-linecap="round"/>
+              <rect x="-28" y="-20" width="56" height="66" rx="1" fill="#FAF6EE" stroke="#B98A3E" stroke-width="0.8"/>
+              <text x="0" y="-4" fill="#B98A3E" font-family="'Cormorant Garamond', Georgia, serif" font-size="8" font-weight="600" text-anchor="middle" letter-spacing="1">KYORP</text>
+              <line x1="-16" y1="2" x2="16" y2="2" stroke="#B98A3E" stroke-width="0.5"/>
+              <text x="0" y="16" fill="#12100E" font-family="'Jost', sans-serif" font-size="5" text-anchor="middle" font-weight="500">${safeText}</text>
+              <text x="0" y="32" fill="#6E675C" font-family="'Jost', sans-serif" font-size="4" text-anchor="middle" letter-spacing="0.5">ORIGINAL PURITY</text>
+            </g>
+          </svg>
+        `;
+      }
+
+      /* ==========================================================================
+         7. VIEW ROUTER & NAVIGATION CONTROLLER
+         ========================================================================== */
+      function navigateTo(hash) {
+        const clean = (hash || "#home").replace("#", "");
+        let viewName = "home";
+        let params = {};
+
+        if (clean.includes("?")) {
+          const parts = clean.split("?");
+          viewName = parts[0];
+          const query = new URLSearchParams(parts[1]);
+          for (const [k, v] of query.entries()) params[k] = v;
+        } else {
+          viewName = clean || "home";
+        }
+
+        // Clean up transient form success banners on view change
+        const instMsg = document.getElementById("inst-success-msg");
+        const contactMsg = document.getElementById("contact-success-msg");
+        const newsMsg = document.getElementById("newsletter-thanks");
+        if (instMsg) instMsg.style.display = "none";
+        if (contactMsg) contactMsg.style.display = "none";
+        if (newsMsg) newsMsg.style.display = "none";
+
+        // Hide all views
+        document.querySelectorAll(".page-view").forEach(el => el.classList.remove("active"));
+
+        // Match view
+        const targetView = document.getElementById(`view-${viewName}`) || document.getElementById("view-home");
+        targetView.classList.add("active");
+        STATE.currentView = viewName;
+        window.scrollTo({ top: 0, behavior: "smooth" });
+
+        // Update nav active link
+        document.querySelectorAll(".nav-link").forEach(link => {
+          link.classList.toggle("active", link.getAttribute("href") === `#${viewName}`);
+        });
+
+        // Close mobile drawer
+        document.getElementById("mobile-menu").classList.remove("open");
+
+        // Execute view render hooks
+        if (viewName === "home") renderHome();
+        else if (viewName === "collections") renderCollections();
+        else if (viewName === "category") {
+          if (params.d && params.d !== STATE.categoryParams.divId) {
+            STATE.categoryParams.divId = params.d;
+            STATE.categoryParams.typeFilter = "all";
+            STATE.categoryParams.page = 1;
+          }
+          renderCategory();
+        }
+        else if (viewName === "product") {
+          if (params.sku) STATE.currentSku = params.sku;
+          renderProduct();
+        }
+        else if (viewName === "cart") renderCart();
+        else if (viewName === "wishlist") renderWishlist();
+      }
+
+      window.addEventListener("hashchange", () => navigateTo(window.location.hash));
+
+      /* ==========================================================================
+         8. VIEW RENDERERS
+         ========================================================================== */
+      // 8.1 HOME RENDERER
+      function renderHome() {
+        const heroArtHost = document.getElementById("hero-svg-host");
+        if (heroArtHost && !heroArtHost.hasChildNodes()) {
+          heroArtHost.innerHTML = renderProductSVG("serum", "#B98A3E", "DERMALOCK");
+        }
+
+        const rail = document.getElementById("home-divisions-rail");
+        if (rail && rail.children.length === 0) {
+          rail.innerHTML = DIVISIONS.map(d => `
+            <div class="division-tile" onclick="window.location.hash='#category?d=${d.id}'" style="cursor: pointer;">
+              <div>
+                <span class="label-caps">${d.num} / 15</span>
+                <h3 class="serif" style="font-size: 22px; margin: 8px 0 4px;">${d.name}</h3>
+                <div style="font-size: 11px; color: var(--saffron); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px;">
+                  ${d.count} Master Formulations
+                </div>
+                <p style="font-size: 13px; color: var(--stone); line-height: 1.5;">${d.desc}</p>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--line); padding-top: 12px;">
+                <span style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em;">Explore Range</span>
+                <span style="color: var(--saffron);">&rarr;</span>
+              </div>
+            </div>
+          `).join("");
+        }
+
+        const flagArt = document.getElementById("flagship-art-panel");
+        if (flagArt && flagArt.children.length === 0) {
+          flagArt.innerHTML = renderProductSVG("cream", "#1B2A22", "DERMALOCK 076");
+        }
+
+        const featGrid = document.getElementById("featured-products-grid");
+        if (featGrid) {
+          const featuredSkus = ["001", "076", "084", "101", "119", "159", "188", "253"];
+          const featItems = ALL_PRODUCTS.filter(p => featuredSkus.includes(p.sku));
+          featGrid.innerHTML = featItems.map(p => createProductCardHTML(p)).join("");
+        }
+      }
+
+      // 8.2 COLLECTIONS RENDERER
+      function renderCollections() {
+        const grid = document.getElementById("collections-grid-all");
+        if (!grid) return;
+        grid.innerHTML = DIVISIONS.map(d => `
+          <div class="product-card" style="padding: 28px; cursor: pointer;" onclick="window.location.hash='#category?d=${d.id}'">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+              <span class="label-caps">${d.num} / 15</span>
+              <span class="${d.status === 'live' ? 'badge-live' : 'badge-dev'}">
+                ${d.status === 'live' ? 'Active Range' : 'In Development'}
+              </span>
+            </div>
+            <h2 class="serif" style="font-size: 26px; margin-bottom: 8px;">${d.name}</h2>
+            <div style="font-size: 12px; color: var(--saffron); margin-bottom: 12px;">
+              ${d.count} Formulations • Range SKU ${d.range}
+            </div>
+            <p style="font-size: 13px; color: var(--stone); line-height: 1.6; margin-bottom: 24px; flex-grow: 1;">${d.desc}</p>
+            <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--line); padding-top: 14px;">
+              <span class="serif" style="font-size: 18px;">${d.status === 'live' ? formatPrice(d.minPrice) + ' — ' + formatPrice(d.maxPrice) : 'Regulatory Phase'}</span>
+              <span class="btn btn-outline" style="padding: 6px 14px; font-size: 10px;">Explore &rarr;</span>
+            </div>
+          </div>
+        `).join("");
+      }
+
+      // 8.3 CATEGORY RENDERER (WITH PAGINATION)
+      function renderCategory() {
+        const div = DIVISIONS.find(d => d.id === STATE.categoryParams.divId) || DIVISIONS[0];
+
+        document.getElementById("cat-hero-title").textContent = div.name;
+        document.getElementById("cat-hero-desc").textContent = div.desc;
+
+        const badge = document.getElementById("cat-badge-status");
+        badge.className = div.status === "live" ? "badge-live" : "badge-dev";
+        badge.textContent = div.status === "live" ? "Commercial Active Range" : "In Development — Subject to Regulatory Filing";
+
+        const divProducts = ALL_PRODUCTS.filter(p => p.divisionId === div.id);
+
+        // Filter chips
+        const types = ["all", ...new Set(divProducts.map(p => p.type))];
+        const chipsWrap = document.getElementById("cat-type-chips");
+        chipsWrap.innerHTML = types.map(t => {
+          const isSel = t === STATE.categoryParams.typeFilter;
+          return `
+            <button type="button" class="pref-pill ${isSel ? 'selected' : ''}" aria-pressed="${isSel}" onclick="window.filterCatType('${t}')">
+              ${t.toUpperCase()}
+            </button>
+          `;
+        }).join("");
+
+        // Filter & Sort
+        let filtered = [...divProducts];
+        if (STATE.categoryParams.typeFilter !== "all") {
+          filtered = filtered.filter(p => p.type === STATE.categoryParams.typeFilter);
+        }
+
+        const sortVal = document.getElementById("cat-sort-select").value || "sku";
+        if (sortVal === "name") filtered.sort((a,b) => a.name.localeCompare(b.name));
+        else if (sortVal === "price-asc") filtered.sort((a,b) => a.priceINR - b.priceINR);
+        else if (sortVal === "price-desc") filtered.sort((a,b) => b.priceINR - a.priceINR);
+        else filtered.sort((a,b) => a.skuNum - b.skuNum);
+
+        // Pagination (12 per page)
+        const pageSize = 12;
+        const visibleProducts = filtered.slice(0, STATE.categoryParams.page * pageSize);
+
+        document.getElementById("cat-count-label").textContent = `Showing ${visibleProducts.length} of ${filtered.length} Formulations`;
+
+        const grid = document.getElementById("cat-products-grid");
+        grid.innerHTML = visibleProducts.map(p => createProductCardHTML(p)).join("");
+
+        const loadMoreWrap = document.getElementById("cat-load-more-wrap");
+        const loadMoreBtn = document.getElementById("cat-load-more-btn");
+        if (loadMoreWrap && loadMoreBtn) {
+          if (visibleProducts.length < filtered.length) {
+            loadMoreWrap.style.display = "block";
+            loadMoreBtn.onclick = () => {
+              STATE.categoryParams.page += 1;
+              renderCategory();
+            };
+          } else {
+            loadMoreWrap.style.display = "none";
+          }
+        }
+      }
+
+      // 8.4 PRODUCT DETAIL RENDERER
+      function renderProduct() {
+        const prod = ALL_PRODUCTS.find(p => p.sku === STATE.currentSku) || ALL_PRODUCTS[0];
+
+        // Reset quantity input on product change
+        const qtyInp = document.getElementById("qty-input");
+        if (qtyInp) qtyInp.value = "1";
+
+        document.getElementById("prod-bread-cat").textContent = prod.divisionName;
+        document.getElementById("prod-bread-cat").setAttribute("href", `#category?d=${prod.divisionId}`);
+        document.getElementById("prod-bread-name").textContent = prod.name;
+        document.getElementById("prod-sku-tag").textContent = `SKU ${prod.sku} • ${prod.type.toUpperCase()}`;
+        document.getElementById("prod-title").textContent = prod.name;
+        document.getElementById("prod-formulation").textContent = prod.formulation;
+        document.getElementById("prod-price-tag").textContent = formatPrice(prod.priceINR);
+
+        const badge = document.getElementById("prod-status-badge");
+        badge.className = prod.status === "live" ? "badge-live" : "badge-dev";
+        badge.textContent = prod.status === "live" ? "Available For Order" : "In Development";
+
+        document.getElementById("product-art-large").innerHTML = renderProductSVG(prod.type, prod.tone, prod.name);
+
+        // Sync Wishlist button on product detail page
+        const wishBtn = document.getElementById("prod-wish-btn");
+        if (wishBtn) {
+          const isWished = STATE.wishlist.includes(prod.sku);
+          wishBtn.dataset.sku = prod.sku;
+          wishBtn.classList.toggle("active", isWished);
+          wishBtn.setAttribute("aria-pressed", isWished);
+          const svg = wishBtn.querySelector("svg");
+          if (svg) svg.setAttribute("fill", isWished ? "currentColor" : "none");
+          wishBtn.onclick = () => window.toggleWishlist(prod.sku);
+        }
+
+        const addBtn = document.getElementById("prod-add-btn");
+        if (prod.status === "development") {
+          addBtn.textContent = "Notify Me When Registered";
+          addBtn.className = "btn btn-outline";
+          addBtn.onclick = () => showToast("Notification registered for " + prod.name);
+        } else {
+          addBtn.textContent = "Add to Order Request";
+          addBtn.className = "btn btn-primary";
+          addBtn.onclick = () => {
+            const q = parseInt(document.getElementById("qty-input").value, 10) || 1;
+            window.addToCart(prod.sku, q);
+          };
+        }
+
+        const related = ALL_PRODUCTS.filter(p => p.divisionId === prod.divisionId && p.sku !== prod.sku).slice(0, 4);
+        document.getElementById("ritual-related-grid").innerHTML = related.map(p => createProductCardHTML(p)).join("");
+      }
+
+      // 8.5 CART RENDERER
+      function renderCart() {
+        const list = document.getElementById("cart-items-list");
+        const empty = document.getElementById("cart-empty-state");
+        const panel = document.getElementById("cart-summary-panel");
+
+        if (STATE.cart.length === 0) {
+          list.innerHTML = "";
+          empty.style.display = "block";
+          panel.style.display = "none";
+          return;
+        }
+
+        empty.style.display = "none";
+        panel.style.display = "block";
+
+        let subtotalINR = 0;
+
+        list.innerHTML = STATE.cart.map(item => {
+          const prod = ALL_PRODUCTS.find(p => p.sku === item.sku) || {};
+          const itemSubtotal = prod.priceINR * item.qty;
+          subtotalINR += itemSubtotal;
+
+          return `
+            <div style="display: flex; gap: 20px; align-items: center; background: var(--ivory); border: 1px solid var(--line); padding: 18px; border-radius: var(--radius); flex-wrap: wrap;">
+              <div style="width: 72px; height: 72px; background: #f0ebe0; flex-shrink: 0;">
+                ${renderProductSVG(prod.type, prod.tone, prod.sku)}
+              </div>
+              <div style="flex-grow: 1; min-width: 180px;">
+                <div class="label-caps">${prod.sku} • ${prod.divisionName}</div>
+                <h4 class="serif" style="font-size: 18px; margin: 2px 0;">${prod.name}</h4>
+                <div style="font-size: 13px; color: var(--stone);">${formatPrice(prod.priceINR)} each</div>
+              </div>
+              <div style="display: flex; align-items: center; border: 1px solid var(--line); border-radius: var(--radius);">
+                <button type="button" style="padding: 4px 10px;" aria-label="Decrease quantity" onclick="window.changeCartQty('${item.sku}', -1)">-</button>
+                <span style="padding: 0 10px; font-size: 13px;">${item.qty}</span>
+                <button type="button" style="padding: 4px 10px;" aria-label="Increase quantity" onclick="window.changeCartQty('${item.sku}', 1)">+</button>
+              </div>
+              <div style="text-align: right; min-width: 90px;">
+                <div class="serif" style="font-size: 18px; font-weight: 500;">${formatPrice(itemSubtotal)}</div>
+                <button type="button" style="font-size: 11px; color: #b03030; text-decoration: underline; margin-top: 4px;" onclick="window.removeCartItem('${item.sku}')">Remove</button>
+              </div>
+            </div>
+          `;
+        }).join("");
+
+        const shipping = subtotalINR >= CONFIG.shippingThresholdINR ? 0 : CONFIG.flatShippingINR;
+        const total = subtotalINR + shipping;
+
+        document.getElementById("cart-subtotal").textContent = formatPrice(subtotalINR);
+        document.getElementById("cart-shipping").textContent = shipping === 0 ? "Complimentary" : formatPrice(shipping);
+        document.getElementById("cart-total").textContent = formatPrice(total);
+      }
+
+      // 8.6 WISHLIST RENDERER
+      function renderWishlist() {
+        const grid = document.getElementById("wishlist-items-grid");
+        const empty = document.getElementById("wishlist-empty-state");
+        const actions = document.getElementById("wishlist-header-actions");
+
+        if (!grid || !empty) return;
+
+        if (STATE.wishlist.length === 0) {
+          grid.innerHTML = "";
+          grid.style.display = "none";
+          empty.style.display = "block";
+          if (actions) actions.style.display = "none";
+          return;
+        }
+
+        const wishProducts = STATE.wishlist
+          .map(sku => ALL_PRODUCTS.find(p => p.sku === sku))
+          .filter(Boolean);
+
+        grid.style.display = "grid";
+        empty.style.display = "none";
+        if (actions) actions.style.display = "flex";
+
+        grid.innerHTML = wishProducts.map(p => createProductCardHTML(p)).join("");
+      }
+
+      /* ==========================================================================
+         9. HELPER: PRODUCT CARD HTML CREATOR
+         ========================================================================== */
+      function createProductCardHTML(p) {
+        const isWished = STATE.wishlist.includes(p.sku);
+        return `
+          <div class="product-card">
+            <div class="product-card-art" onclick="window.location.hash='#product?sku=${p.sku}'" style="cursor: pointer;">
+              ${renderProductSVG(p.type, p.tone, p.name)}
+            </div>
+            <div class="product-card-content">
+              <div class="card-sku">${p.sku} • ${p.type.toUpperCase()}</div>
+              <h3 class="card-title" onclick="window.location.hash='#product?sku=${p.sku}'" style="cursor: pointer;">${p.name}</h3>
+              <p class="card-formula">${p.formulation}</p>
+              <div class="card-footer">
+                <span class="card-price">${formatPrice(p.priceINR)}</span>
+                <div style="display: flex; gap: 8px;">
+                  <button type="button" class="wish-toggle ${isWished ? 'active' : ''}" data-sku="${p.sku}" aria-pressed="${isWished}" onclick="window.toggleWishlist('${p.sku}')" aria-label="Wishlist ${escapeHTML(p.name)}" title="${isWished ? 'Remove from Wishlist' : 'Save to Wishlist'}">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="${isWished ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                  </button>
+                  ${p.status === 'live' ? `
+                    <button type="button" class="btn btn-primary" style="padding: 6px 12px; font-size: 10px;" onclick="window.addToCart('${p.sku}')">Add</button>
+                  ` : `
+                    <button type="button" class="btn btn-outline" style="padding: 6px 10px; font-size: 9px;" onclick="window.location.hash='#product?sku=${p.sku}'">Notify</button>
+                  `}
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+
+      /* ==========================================================================
+         10. GLOBAL STORE ACTIONS (CART, WISHLIST, SEARCH)
+         ========================================================================== */
+      function showToast(msg) {
+        const toast = document.getElementById("toast-notify");
+        const msgEl = document.getElementById("toast-msg");
+        if (!toast || !msgEl) return;
+        msgEl.textContent = msg;
+        toast.style.display = "flex";
+        toast.style.opacity = "1";
+        clearTimeout(window.__toastTimer);
+        window.__toastTimer = setTimeout(() => {
+          toast.style.opacity = "0";
+          setTimeout(() => { toast.style.display = "none"; }, 300);
+        }, 3200);
+      }
+
+      window.addToCart = function(sku, qty = 1) {
+        const existing = STATE.cart.find(i => i.sku === sku);
+        if (existing) existing.qty += qty;
+        else STATE.cart.push({ sku, qty });
+        saveStore();
+        showToast("Formulation SKU " + sku + " added to your order request list.");
+      };
+
+      window.changeCartQty = function(sku, delta) {
+        const item = STATE.cart.find(i => i.sku === sku);
+        if (!item) return;
+        item.qty += delta;
+        if (item.qty <= 0) STATE.cart = STATE.cart.filter(i => i.sku !== sku);
+        saveStore();
+        renderCart();
+      };
+
+      window.removeCartItem = function(sku) {
+        STATE.cart = STATE.cart.filter(i => i.sku !== sku);
+        saveStore();
+        renderCart();
+      };
+
+      // Targeted DOM update for Wishlist + Wishlist View Sync
+      window.toggleWishlist = function(sku) {
+        const wasWished = STATE.wishlist.includes(sku);
+        const nowWished = !wasWished;
+        const prod = ALL_PRODUCTS.find(p => p.sku === sku);
+
+        if (wasWished) {
+          STATE.wishlist = STATE.wishlist.filter(s => s !== sku);
+          showToast((prod ? prod.name : "SKU " + sku) + " removed from Wishlist.");
+        } else {
+          STATE.wishlist.push(sku);
+          showToast((prod ? prod.name : "SKU " + sku) + " saved to your Wishlist.");
+        }
+        saveStore();
+
+        document.querySelectorAll(`[data-sku="${sku}"]`).forEach(btn => {
+          btn.classList.toggle("active", nowWished);
+          btn.setAttribute("aria-pressed", nowWished);
+          const svg = btn.querySelector("svg");
+          if (svg) svg.setAttribute("fill", nowWished ? "currentColor" : "none");
+        });
+
+        if (STATE.currentView === "wishlist") {
+          renderWishlist();
+        }
+      };
+
+      window.addAllWishlistToCart = function() {
+        let addedCount = 0;
+        STATE.wishlist.forEach(sku => {
+          const prod = ALL_PRODUCTS.find(p => p.sku === sku);
+          if (prod && prod.status === "live") {
+            const existing = STATE.cart.find(i => i.sku === sku);
+            if (existing) existing.qty += 1;
+            else STATE.cart.push({ sku, qty: 1 });
+            addedCount++;
+          }
+        });
+        saveStore();
+        if (addedCount > 0) {
+          showToast(`Added ${addedCount} saved formulation(s) to your Order Request.`);
+        } else {
+          showToast("Saved items are currently in regulatory development.");
+        }
+      };
+
+      window.clearWishlist = function() {
+        STATE.wishlist = [];
+        saveStore();
+        renderWishlist();
+        showToast("Your Wishlist has been cleared.");
+      };
+
+      window.filterCatType = function(type) {
+        STATE.categoryParams.typeFilter = type;
+        STATE.categoryParams.page = 1;
+        renderCategory();
+      };
+
+      document.getElementById("cat-sort-select")?.addEventListener("change", () => {
+        STATE.categoryParams.page = 1;
+        renderCategory();
+      });
+
+      // SEARCH OVERLAY LOGIC
+      const searchTrigger = document.getElementById("btn-search-trigger");
+      const searchOverlay = document.getElementById("search-overlay");
+      const searchClose = document.getElementById("search-close");
+      const searchInput = document.getElementById("site-search-input");
+      const searchResults = document.getElementById("search-results-container");
+
+      function openSearch() {
+        searchOverlay.classList.add("open");
+        searchInput.value = "";
+        searchResults.innerHTML = "";
+        setTimeout(() => searchInput.focus(), 100);
+      }
+      function closeSearch() {
+        searchOverlay.classList.remove("open");
+      }
+
+      searchTrigger?.addEventListener("click", openSearch);
+      searchClose?.addEventListener("click", closeSearch);
+      window.addEventListener("keydown", (e) => {
+        if (e.key === "/" && !["INPUT", "TEXTAREA", "SELECT"].includes(document.activeElement.tagName)) {
+          e.preventDefault();
+          openSearch();
+        }
+        if (e.key === "Escape") {
+          closeSearch();
+          window.closePrefModal();
+        }
+      });
+
+      searchInput?.addEventListener("input", (e) => {
+        const q = e.target.value.trim().toLowerCase();
+        if (q.length < 2) {
+          searchResults.innerHTML = `<div style="color: rgba(246,241,231,0.5); font-size: 14px;">Type at least 2 characters to search formulations...</div>`;
+          return;
+        }
+
+        const hits = ALL_PRODUCTS.filter(p => 
+          p.name.toLowerCase().includes(q) ||
+          p.formulation.toLowerCase().includes(q) ||
+          p.divisionName.toLowerCase().includes(q) ||
+          p.sku.includes(q)
+        ).slice(0, 8);
+
+        if (hits.length === 0) {
+          searchResults.innerHTML = `<div style="color: rgba(246,241,231,0.5); font-size: 14px;">No formulation matches found for "${escapeHTML(q)}".</div>`;
+        } else {
+          searchResults.innerHTML = hits.map(p => `
+            <a href="#product?sku=${p.sku}" onclick="document.getElementById('search-overlay').classList.remove('open')" class="search-result-row">
+              <div>
+                <span style="font-size: 10px; letter-spacing: 0.16em; color: var(--saffron-soft);">${p.sku} • ${p.divisionName.toUpperCase()}</span>
+                <h4 class="serif" style="font-size: 18px; margin-top: 2px;">${p.name}</h4>
+                <div style="font-size: 12px; color: rgba(246,241,231,0.7);">${p.formulation}</div>
+              </div>
+              <div style="text-align: right;">
+                <span class="serif" style="font-size: 18px; color: var(--saffron-soft);">${formatPrice(p.priceINR)}</span>
+              </div>
+            </a>
+          `).join("");
+        }
+      });
+
+      // QUANTITY STEPPERS
+      document.getElementById("qty-minus")?.addEventListener("click", () => {
+        const inp = document.getElementById("qty-input");
+        let val = parseInt(inp.value, 10) || 1;
+        if (val > 1) inp.value = val - 1;
+      });
+      document.getElementById("qty-plus")?.addEventListener("click", () => {
+        const inp = document.getElementById("qty-input");
+        let val = parseInt(inp.value, 10) || 1;
+        inp.value = val + 1;
+      });
+
+      // ACCORDION TOGGLES (WITH ARIA-EXPANDED)
+      document.querySelectorAll(".accordion-header").forEach(h => {
+        h.addEventListener("click", () => {
+          const item = h.parentElement;
+          const isOpen = item.classList.toggle("active");
+          h.setAttribute("aria-expanded", isOpen);
+        });
+      });
+
+      // PREFERENCES (LANG & CURRENCY)
+      window.openPrefModal = function() {
+        document.getElementById("pref-modal").classList.add("open");
+        document.querySelectorAll("#lang-picker .pref-pill").forEach(b => {
+          const isSelected = b.dataset.lang === STATE.lang;
+          b.classList.toggle("selected", isSelected);
+          b.setAttribute("aria-pressed", isSelected);
+        });
+        document.querySelectorAll("#curr-picker .pref-pill").forEach(b => {
+          const isSelected = b.dataset.curr === STATE.curr;
+          b.classList.toggle("selected", isSelected);
+          b.setAttribute("aria-pressed", isSelected);
+        });
+      };
+
+      window.closePrefModal = function() {
+        document.getElementById("pref-modal").classList.remove("open");
+      };
+
+      document.getElementById("btn-pref-trigger")?.addEventListener("click", window.openPrefModal);
+      document.getElementById("pref-close")?.addEventListener("click", window.closePrefModal);
+
+      document.querySelectorAll("#lang-picker .pref-pill").forEach(btn => {
+        btn.addEventListener("click", () => {
+          document.querySelectorAll("#lang-picker .pref-pill").forEach(b => {
+            b.classList.remove("selected");
+            b.setAttribute("aria-pressed", "false");
+          });
+          btn.classList.add("selected");
+          btn.setAttribute("aria-pressed", "true");
+        });
+      });
+      document.querySelectorAll("#curr-picker .pref-pill").forEach(btn => {
+        btn.addEventListener("click", () => {
+          document.querySelectorAll("#curr-picker .pref-pill").forEach(b => {
+            b.classList.remove("selected");
+            b.setAttribute("aria-pressed", "false");
+          });
+          btn.classList.add("selected");
+          btn.setAttribute("aria-pressed", "true");
+        });
+      });
+
+      document.getElementById("pref-apply")?.addEventListener("click", () => {
+        const selLang = document.querySelector("#lang-picker .pref-pill.selected")?.dataset.lang || "en";
+        const selCurr = document.querySelector("#curr-picker .pref-pill.selected")?.dataset.curr || "INR";
+        STATE.lang = selLang;
+        STATE.curr = selCurr;
+        saveStore();
+        applyI18n();
+        window.closePrefModal();
+
+        if (STATE.currentView === "home") renderHome();
+        else if (STATE.currentView === "collections") renderCollections();
+        else if (STATE.currentView === "category") renderCategory();
+        else if (STATE.currentView === "product") renderProduct();
+        else if (STATE.currentView === "cart") renderCart();
+        else if (STATE.currentView === "wishlist") renderWishlist();
+      });
+
+      function applyI18n() {
+        document.documentElement.lang = STATE.lang;
+        document.documentElement.classList.toggle("lang-hi", STATE.lang === "hi");
+
+        const dict = STRINGS[STATE.lang] || STRINGS.en;
+        document.querySelectorAll("[data-i18n]").forEach(el => {
+          const key = el.getAttribute("data-i18n");
+          if (dict[key]) el.textContent = dict[key];
+        });
+      }
+
+      // ORDER SUBMISSION & RECEIPT (SANITIZED + FORM RESET)
+      window.handleOrderSubmit = function(e) {
+        e.preventDefault();
+        const refNo = "KY-" + Math.floor(100000 + Math.random() * 900000);
+        const name = escapeHTML(document.getElementById("order-name").value);
+        const phone = escapeHTML(document.getElementById("order-phone").value);
+        const email = escapeHTML(document.getElementById("order-email").value);
+        const addr = escapeHTML(document.getElementById("order-address").value);
+
+        document.getElementById("rec-ref").textContent = refNo;
+        document.getElementById("rec-date").textContent = new Date().toLocaleDateString();
+        document.getElementById("rec-recipient-block").innerHTML = `
+          <strong>Client:</strong> ${name} &bull; ${phone} &bull; ${email}<br>
+          <strong>Dispatch Address:</strong> ${addr}
+        `;
+
+        let subtotal = 0;
+        document.getElementById("rec-items-table").innerHTML = STATE.cart.map(i => {
+          const p = ALL_PRODUCTS.find(x => x.sku === i.sku);
+          const rowSub = p.priceINR * i.qty;
+          subtotal += rowSub;
+          return `
+            <div style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px dashed var(--line); font-size: 13px;">
+              <span>${i.qty}x ${escapeHTML(p.name)} (${p.sku})</span>
+              <span>${formatPrice(rowSub)}</span>
+            </div>
+          `;
+        }).join("");
+
+        const shipping = subtotal >= CONFIG.shippingThresholdINR ? 0 : CONFIG.flatShippingINR;
+        document.getElementById("rec-total-amount").textContent = formatPrice(subtotal + shipping);
+        document.getElementById("receipt-modal").classList.add("open");
+
+        document.getElementById("order-request-form").reset();
+        STATE.cart = [];
+        saveStore();
+        renderCart();
+      };
+
+      window.closeReceiptModal = function() {
+        document.getElementById("receipt-modal").classList.remove("open");
+        window.location.hash = "#home";
+      };
+
+      // B2B and Form Hooks
+      window.handleInstSubmit = function(e) {
+        e.preventDefault();
+        document.getElementById("inst-form").reset();
+        document.getElementById("inst-success-msg").style.display = "block";
+      };
+
+      window.handleContactSubmit = function(e) {
+        e.preventDefault();
+        document.getElementById("contact-form").reset();
+        document.getElementById("contact-success-msg").style.display = "block";
+      };
+
+      window.handleNewsletter = function(e) {
+        e.preventDefault();
+        document.getElementById("newsletter-form").reset();
+        document.getElementById("newsletter-thanks").style.display = "block";
+      };
+
+      // MEGA MENU CLOSER FUNCTION
+      window.closeMegaMenu = function() {
+        const menu = document.querySelector('.mega-menu');
+        if (menu) {
+          menu.style.display = 'none'; // Force hide
+          setTimeout(() => { menu.style.display = ''; }, 150); // Restore CSS control
+        }
+      };
+
+      // POPULATE MEGA MENU
+      const megaGrid = document.getElementById("mega-menu-grid");
+      if (megaGrid) {
+        megaGrid.innerHTML = DIVISIONS.map(d => `
+          <a href="#category?d=${d.id}" class="mega-item" onclick="window.closeMegaMenu()">
+            <span class="mega-item-title">
+              <span>${d.num}. ${d.name}</span>
+              <span style="font-size: 11px; color: var(--saffron); flex-shrink: 0;">${d.count} SKUs</span>
+            </span>
+            <span class="mega-item-desc">${d.desc}</span>
+          </a>
+        `).join("");
+      }
+
+      // SCROLL PROGRESS & HEADER HIDE/SHOW
+      let lastScroll = 0;
+      window.addEventListener("scroll", () => {
+        const scrolled = window.scrollY;
+        const total = document.documentElement.scrollHeight - window.innerHeight;
+        const pct = total > 0 ? (scrolled / total) * 100 : 0;
+        document.getElementById("scroll-bar").style.width = pct + "%";
+
+        const header = document.getElementById("site-header");
+        if (scrolled > 200 && scrolled > lastScroll) {
+          header.style.transform = "translateY(-100%)";
+        } else {
+          header.style.transform = "translateY(0)";
+        }
+        lastScroll = scrolled;
+      });
+
+      // MOBILE MENU
+      const mobToggle = document.getElementById("mobile-menu-toggle");
+      const mobMenu = document.getElementById("mobile-menu");
+      const mobClose = document.getElementById("mobile-menu-close");
+
+      mobToggle?.addEventListener("click", () => mobMenu.classList.add("open"));
+      mobClose?.addEventListener("click", () => mobMenu.classList.remove("open"));
+
+      // ANNOUNCEMENT DISMISS
+      document.getElementById("announcement-dismiss")?.addEventListener("click", () => {
+        document.getElementById("announcement-bar").style.display = "none";
+      });
+
+      // INITIAL BOOT
+      window.addEventListener("DOMContentLoaded", () => {
+        setTimeout(() => {
+          const pre = document.getElementById("preloader");
+          if (pre) pre.classList.add("fade-out");
+        }, 800);
+
+        function checkScreen() {
+          const isMob = window.innerWidth <= 960;
+          if (mobToggle) mobToggle.style.display = isMob ? "flex" : "none";
+          document.querySelector(".desktop-nav").style.display = isMob ? "none" : "flex";
+        }
+        checkScreen();
+        window.addEventListener("resize", checkScreen);
+
+        applyI18n();
+        updateCartCount();
+        updateWishCount();
+        navigateTo(window.location.hash || "#home");
+      });
+
+    })();
+  </script>
+</body>
+</html> and in hero section i want to put a viedo which will keep playing in the background of it so make a space for in on the hero section and it will play in loop and stop when i go down and or on a different page and section in single code 
